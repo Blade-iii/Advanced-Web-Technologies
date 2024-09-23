@@ -1,6 +1,7 @@
 from flask import Flask
 app = Flask (__name__)
 
+
 @app.route("/")  # This is the landing route
 def hello():
     return """
