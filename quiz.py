@@ -52,3 +52,24 @@ def q2w():
     <h1> Wrong answer!</h1>
     <a href="/q2/">Do you want to try again?</a>
     """
+    
+@app.route("/q3/")
+def q3():
+    return """"
+    <h1>Question 2</h1>
+    <p>Which is the best university in the UK</p>
+      <ul>
+        <li><a href="/success/">Edinburgh Napier</a></li>
+        <li><a href="/q3w/">University of Edinburgh</a></li>
+        <li><a href="/q3w/">Herriot Watt</a></li>
+        <li><a href="/q3w/">Queen Margaret</a></li>
+    </ul>
+"""
+
+@app.route("/q3w/")
+def q3w():
+    return """
+    <h1> Wrong answer!</h1>
+    <a href="/q3/">Do you want to try again?</a>
+    """
+    
