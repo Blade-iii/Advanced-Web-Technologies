@@ -56,7 +56,7 @@ def q2w():
 @app.route("/q3/")
 def q3():
     return """"
-    <h1>Question 2</h1>
+    <h1>Question 3</h1>
     <p>Which is the best university in the UK</p>
       <ul>
         <li><a href="/success/">Edinburgh Napier</a></li>
@@ -71,5 +71,12 @@ def q3w():
     return """
     <h1> Wrong answer!</h1>
     <a href="/q3/">Do you want to try again?</a>
+    """
+    
+@app.route("/success/")
+def success():
+    return """
+    <h1> You answered all the questions correctly!</h1>
+    <a href="/">Do you want to go back to the start?</a>
     """
     
