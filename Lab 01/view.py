@@ -9,9 +9,14 @@ views = Blueprint('views', __name__)  # Allows this Python file to be used as a 
 def home():
     return render_template("index.html", name="Thomas", age=21) # PAss variables and html files
 
-@views.route("/profile/<username>")
-def profile(username):
+@views.route("/profiles/<username>")
+def profiles(username):
     return render_template("index.html",name=username)
+
+@views.route("/profile")
+def profile():
+    return render_template("profile.html")
+
 
 @views.route("/json") # Returns a Json
 def get_json():
