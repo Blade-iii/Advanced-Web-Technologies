@@ -28,7 +28,27 @@ def q1():
     
 @app.route("/q1w/")
 def q1w():
-        return """
+    return """
     <h1> Wrong answer!</h1>
     <a href="/q1/">Do you want to try again?</a>
+    """
+    
+@app.route("/q2/")
+def q2():
+    return """"
+    <h1>Question 2</h1>
+    <p>Which is the best university in Scotland</p>
+      <ul>
+        <li><a href="/q3/">Edinburgh Napier</a></li>
+        <li><a href="/q2w/">University of Edinburgh</a></li>
+        <li><a href="/q2w/">Herriot Watt</a></li>
+        <li><a href="/q2w/">Queen Margaret</a></li>
+    </ul>
+"""
+
+@app.route("/q2w/")
+def q2w():
+    return """
+    <h1> Wrong answer!</h1>
+    <a href="/q2/">Do you want to try again?</a>
     """
