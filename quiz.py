@@ -21,7 +21,14 @@ def q1():
     <ul>
         <li><a href="/q2/">Edinburgh Napier</a></li>
         <li><a href="/q1w/">University of Edinburgh</a></li>
-        <li><a href="/q2/">Herriot Watt</a></li>
-        <li><a href="/q2/">Queen Margaret</a></li>
+        <li><a href="/q1w/">Herriot Watt</a></li>
+        <li><a href="/q1w/">Queen Margaret</a></li>
     </ul>
+    """
+    
+@app.route("/q1w/")
+def q1w():
+        return """
+    <h1> Wrong answer!</h1>
+    <a href="/q1/">Do you want to try again?</a>
     """
