@@ -11,4 +11,10 @@ h3{
     color: white;
 }
 
+/* Ensure all images fit the same height while keeping aspect ratio */
+.poster-img {
+    height: 100%;       /* Let the image height fill the carousel */
+    object-fit: cover;  /* Ensures images cover the space while maintaining aspect ratio */
+    max-height: 1206px; /* This ensures the images won't exceed the max height */
+}
 
