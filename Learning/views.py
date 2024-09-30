@@ -34,8 +34,8 @@ def register():
          return render_template("register.html")
      
      
-    @views.route("/participants") 
-    def participants(): 
+@views.route("/participants") 
+def participants(): 
         connect = sqlite3.connect('database.db') 
         cursor = connect.cursor() 
         cursor.execute('SELECT * FROM USERS') 
