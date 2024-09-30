@@ -1,9 +1,13 @@
-from flask import Flask
+from flask import Flask , abort
 app = Flask (__name__)
 
 @app.route("/")
 def hello():
     return "Hello Napier"
+
+@app.route("/force404")
+def force404():
+    abort(404)
 
 @app.errorhandler(404)
 def pageNotFound(error):
