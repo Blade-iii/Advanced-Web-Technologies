@@ -7,7 +7,7 @@ app = Flask(__name__)  # Create an instance of the Flask class
 def account():
     if request.method == 'POST':  # If the request method is POST (file upload)
         f = request.files['datafile']  # Retrieve the file from the form using 'datafile' as the field name
-        f.save('static/uploads/upload.jpg')  # Save the uploaded file to the specified directory
+        f.save('Lab 03\\static\\uploads\\' + f.filename)  # Using double backslashes
         return "File Uploaded"  # Return a success message after saving the file
     else:  
         page = '''
