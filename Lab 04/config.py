@@ -18,5 +18,18 @@ def init(app):
     except:
         print("Could not read configs from: ", config_location)
     
+init(app)
+
+@app.route("/")
+def root():
+    return "Hello Napier from the configuration testing app"
+
+@app.route('/config/')
+def config():
+   s=[]
+   s.append('debug: '+str(app.config['DEBUG']))
+   s.append('port: '+ app.config['port'])
+   s.append('url: '+ app.config['ip_address'])
+   return ',' .join(s)
 
 
