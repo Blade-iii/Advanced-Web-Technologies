@@ -8,7 +8,7 @@ def init(app):
     config = configparser.ConfigParser()
     try:
         print("INIT FUNCTION")
-        config_location="etc/defaults.cfg"
+        config_location = "lab04/etc/defaults.cfg"
         config.read(config_location)
         
         app.config['DEBUG'] = config.get("config","debug")
@@ -33,3 +33,8 @@ def config():
    return ',' .join(s)
 
 
+if __name__ == "__main__":
+    app.run(
+        host=app.config['ip_address'],
+        port=int(app.config['port'])
+        )
