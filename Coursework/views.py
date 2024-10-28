@@ -6,7 +6,7 @@ views = Blueprint('views', __name__)  # Allows this Python file to be used as a 
 
 connect = sqlite3.connect('database.db')  # Connect to the database
 connect.execute(
-    'CREATE TABLE IF NOT EXISTS USERS(email TEXT, password TEXT)'
+    'CREATE TABLE IF NOT EXISTS USERS(email TEXT, password TEXT,name TEXT)'
 )
 
 @views.route("/")
@@ -22,12 +22,13 @@ def register():
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
+        name = request.form['name']
         
         with sqlite3.connect("database.db") as users:
             cursor = users.cursor()
             cursor.execute("INSERT INTO USERS \
-                (email,password) VALUES (?,?)",
-                (email,password))
+                (email,password,name) VALUES (?,?,?)",
+                (email,password,name))
             users.commit()
             return render_template("index.html")
     else:
@@ -43,7 +44,7 @@ def participants():
         data = cursor.fetchall() 
         return render_template("participants.html", data=data) 
     
-@views.route("/login", methods=['GET', 'POST'])
+@views.route("/login/", methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         email = request.form['email']
