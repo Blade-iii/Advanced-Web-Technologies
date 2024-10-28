@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %} Home page {% endblock %}
+{% block content %} 
+
+<div class="container-md">
+  <br>
+<table style="width:100%"> 
+    <tr> 
+      <th>Email</th> 
+      <th>Password</th> 
+    </tr> 
+    {%for user in data %} 
+       <tr> 
+         <td>{{user[0]}}</td> 
+         <td>{{user[1]}}</td> 
+        </tr> 
+    {%endfor%} 
+</table>
+</div>
+{% endblock %}

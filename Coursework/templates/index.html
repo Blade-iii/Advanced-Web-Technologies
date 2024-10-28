@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %} Home page {% endblock %}
+{% block content %} 
+<br>
+<h3> Recently Added Games</h3>
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" style="max-width: 500px; max-height: 1206px; margin: 0 auto;">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="/static/ff16.jpg" class="d-block w-100 poster-img" alt="Final Fantasy 16 Poster">
+        </div>
+        <div class="carousel-item">
+            <img src="/static/eldenRing.jpg" class="d-block w-100 poster-img" alt="Elden Ring Poster">
+        </div>
+        <div class="carousel-item">
+            <img src="/static/spaceMarine.jpg" class="d-block w-100 poster-img" alt="Space Marine Poster">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+
+
+ <div class="container-md">
+    <br>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac lorem vitae neque feugiat iaculis. Vestibulum gravida ex vitae ligula viverra finibus. Fusce varius nibh sagittis ante pretium placerat. Cras ex risus, dignissim non accumsan eget, consectetur id dui. Mauris libero elit, varius vitae laoreet ut, sollicitudin ac eros. Pellentesque pulvinar, dolor a placerat molestie, ante nisi ultricies eros, a porta mi quam volutpat odio. Nullam hendrerit neque non est varius facilisis. Duis tincidunt condimentum placerat. Nullam varius eros ligula, et varius ex efficitur non. Etiam congue, eros at cursus suscipit, risus augue feugiat quam, ac lobortis mauris lectus vel velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce blandit auctor cursus. Nunc viverra, mi a rhoncus iaculis, odio justo consequat odio, vel lobortis dui ex finibus felis.
+    </p>
+ </div>       
+
+{% endblock %}
