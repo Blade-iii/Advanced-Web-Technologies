@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template , redirect , url_for, request, flash# Import libraries from flask
+from flask import Blueprint, render_template , redirect , url_for, request, flash # Import libraries from flask
 import sqlite3 # import sqllite 3 to create and access a database
 
 views = Blueprint('views', __name__)  # Allows this Python file to be used as a blueprint
