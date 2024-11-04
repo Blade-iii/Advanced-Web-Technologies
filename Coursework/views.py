@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template , redirect , url_for, request, flash# Import libraries from flask
+from flask import Blueprint, render_template , redirect , url_for, request, flash # Import libraries from flask
 import sqlite3 # import sqllite 3 to create and access a database
 
 views = Blueprint('views', __name__)  # Allows this Python file to be used as a blueprint
@@ -6,7 +6,7 @@ views = Blueprint('views', __name__)  # Allows this Python file to be used as a 
 
 connect = sqlite3.connect('database.db')  # Connect to the database
 connect.execute(
-    'CREATE TABLE IF NOT EXISTS USERS(email TEXT, password TEXT)'
+    'CREATE TABLE IF NOT EXISTS USERS(userID INTEGER PRIMARY KEY AUTOINCREMENT,email TEXT, password TEXT, personName TEXT)'
 )
 
 @views.route("/")
@@ -17,17 +17,20 @@ def home():
 def about():
     return render_template("about.html")
 
-@views.route("/register" , methods=['GET','POST'])
+@views.route("/register/" , methods=['GET','POST'])
 def register():
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
+        name = request.form['name']
+        userID = None
+        
         
         with sqlite3.connect("database.db") as users:
             cursor = users.cursor()
             cursor.execute("INSERT INTO USERS \
-                (email,password) VALUES (?,?)",
-                (email,password))
+                (email,password,personName,userID) VALUES (?,?,?,?)",
+                (email,password,name,userID))
             users.commit()
             return render_template("index.html")
     else:
@@ -43,7 +46,7 @@ def participants():
         data = cursor.fetchall() 
         return render_template("participants.html", data=data) 
     
-@views.route("/login", methods=['GET', 'POST'])
+@views.route("/login/", methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         email = request.form['email']
