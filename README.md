@@ -23,7 +23,7 @@ To build and run your Docker container for the Flask application, use the follow
 
 ```bash
 # Navigate to the project directory
-cd Advanced-Web-Technologies/Lab 01
+cd Advanced-Web-Technologies/Coursework
 
 # Build the Docker image
 docker build -t dockerfile .
