@@ -23,13 +23,14 @@ def register():
         email = request.form['email']
         password = request.form['password']
         name = request.form['name']
+        userID = None
         
         
         with sqlite3.connect("database.db") as users:
             cursor = users.cursor()
             cursor.execute("INSERT INTO USERS \
-                (email,password,personName,userID) VALUES (?,?,?)",
-                (email,password,name))
+                (email,password,personName,userID) VALUES (?,?,?,?)",
+                (email,password,name,userID))
             users.commit()
             return render_template("index.html")
     else:
