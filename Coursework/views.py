@@ -1,10 +1,10 @@
 from flask import Blueprint, render_template , redirect , url_for, request, flash # Import libraries from flask
-import sqlite3 # import sqllite 3 to create and access a database
-import json
+import sqlite3 # import SQLite 3 to create and access a database
+import json # Import Json Library
 views = Blueprint('views', __name__)  # Allows this Python file to be used as a blueprint
 
-
-connect = sqlite3.connect('database.db')  # Connect to the database
+# Connect to the database and create the user table
+connect = sqlite3.connect('database.db')  
 connect.execute(
     'CREATE TABLE IF NOT EXISTS USERS(userID INTEGER PRIMARY KEY AUTOINCREMENT,email TEXT, password TEXT, personName TEXT)'
 )
@@ -24,14 +24,17 @@ for row in rows:
 with open('users.json', 'w') as f:
     json.dump(data, f, indent=4)
 
+# Root directory for the website
 @views.route("/")
 def home():
     return render_template("index.html") 
 
+# About directory for the website to explain what it's about
 @views.route("/about")
 def about():
     return render_template("about.html")
 
+# Register directory for the website to allow the user to register
 @views.route("/register/" , methods=['GET','POST'])
 def register():
     if request.method == 'POST':
@@ -50,7 +53,8 @@ def register():
             return render_template("index.html")
     else:
          return render_template("register.html")
-         
+  
+# Login directory to allow the user to login to the website       
 @views.route("/login/", methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
