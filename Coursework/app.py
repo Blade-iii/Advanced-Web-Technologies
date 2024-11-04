@@ -1,7 +1,10 @@
 from flask import Flask , url_for, redirect,render_template
-from views import views # Import the view.py to use the blueprint#
+from views import views # Import the view.py to use the blueprint
+from flask import Flask
+from flask_bcrypt import Bcrypt
 
 app =  Flask(__name__)
+bcrypt = Bcrypt(app)
 
 app.register_blueprint(views, url_prefix="/") 
 
