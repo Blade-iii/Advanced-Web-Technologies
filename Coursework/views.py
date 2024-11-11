@@ -11,6 +11,9 @@ connect = sqlite3.connect('database.db')
 connect.execute(
     'CREATE TABLE IF NOT EXISTS USERS(userID INTEGER PRIMARY KEY AUTOINCREMENT,email TEXT NOT NULL UNIQUE, password TEXT NOT NULL UNIQUE, personName TEXT NOT NULL)'
 )
+connect.execute(
+    'CREATE TABLE IF NOT EXISTS GAMES(gameID INTEGER PRIMARY KEY,gameName TEXT NOT NULL,gameReleaseDate DATE NOT NULL, gameAgeRating INTEGER NOT NULL, gameDeveloper TEXT NOT NULL, gamePlatforms TEXT NOT NULL, gameDescription TEXT NOT NULL, gameUserRating REAL, gameActors TEXT NOT NULL )'
+)
 
 cursor = connect.cursor()
 
@@ -96,8 +99,14 @@ def logout():
     else:
         return render_template('index.html')
     
+@views.route("/games/")
+def games():
 
-    
+   # Load the JSON data from the file
+    with open("games.json", "r") as file:
+        data = json.load(file)
 
- 
+    # Pass the data to the template
+    return render_template("game.html", games=data['Games'])
+
         
