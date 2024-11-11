@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template , redirect , url_for, request, flash # Import libraries from flask
+from flask import Blueprint, render_template , redirect , url_for, request, flash,session # Import libraries from flask
 import sqlite3 # import SQLite 3 to create and access a database
 import json # Import Json Library
 from flask_bcrypt import Bcrypt
@@ -71,13 +71,15 @@ def login():
             cursor = conn.cursor()
             cursor.execute('SELECT * FROM USERS WHERE email = ?', (email,))
             result = cursor.fetchone()  # Fetch the user record
+           
         
         if result:
             storedPw = result[2]
+            session['userName'] = result[3] # Store user name in a session
             if bcrypt.check_password_hash(storedPw, password):
                 flash('Login Successful')
              # If the credentials are correct, redirect to the home page
-                return render_template('index.html')
+                return render_template('index.html',userName = session['userName'])
         
         else:
             # If incorrect, display an error message
@@ -85,6 +87,16 @@ def login():
             return render_template('login.html')
     
     return render_template('login.html')
+
+@views.route("/logout/")
+def logout():
+    if session['userName'] != None:
+        session.pop('userName', None)
+        return render_template('index.html')
+    else:
+        return render_template('index.html')
+    
+
     
 
  

@@ -33,7 +33,7 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="/login">Login</a></li>
-                  <li><a class="dropdown-item" href="#">Log out</a></li>
+                  <li><a class="dropdown-item" href="/logout">Log out</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="/register">Register</a></li>
                   <li><a class="dropdown-item" href="/participants">Support</a></li>
@@ -44,7 +44,13 @@
         </div>
     </nav>
 
-    <h1>Game Catalog</h1>
+    <!-- Fix later-->
+  {% if userName != None: %}
+    <h1>Welcome {{ userName }}, to Games Catalog</h1>
+  {% else: %}
+    <h1>Games Catalog</h1>
+  {% endif %}
+  
 
     {% block content %} 
     {% endblock %}
