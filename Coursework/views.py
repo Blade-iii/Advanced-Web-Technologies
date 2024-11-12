@@ -28,13 +28,13 @@ for row in rows:
     data.append({'id': row[0], 'email': row[1], 'password': row[2], 'name':row[3]})
 
 # Dump JSON data to a file
-with open('users.json', 'w') as f:
+with open('Coursework/users.json', 'w') as f:
     json.dump(data, f, indent=4)
 
 connect.close();
 
    # Load the JSON data from the file
-with open("games.json", "r") as file:
+with open("Coursework/games.json", "r") as file:
     data = json.load(file)
     gamesList = data["Games"]
         
@@ -136,7 +136,7 @@ def games():
 @views.route("/allGames/")
 def allGames():
      # Load the JSON data from the file
-    with open("games.json", "r") as file:
+    with open("Coursework/games.json", "r") as file:
         data = json.load(file)
         gamesList = data["Games"]
     
