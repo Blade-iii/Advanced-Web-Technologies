@@ -31,6 +31,19 @@ for row in rows:
 with open('users.json', 'w') as f:
     json.dump(data, f, indent=4)
 
+connect.close();
+
+   # Load the JSON data from the file
+with open("games.json", "r") as file:
+    data = json.load(file)
+    gamesList = data["Games"]
+        
+with sqlite3.connect('database.db') as conn:
+    cursor = conn.cursor()
+    cursor.executemany(
+    "INSERT OR IGNORE INTO GAMES(gameID, gameName, gameReleaseDate, gameAgeRating, gameDeveloper, gamePlatforms, gameDescription, gameUserRating, gameActors) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+    [[d['gameID'], d['gameName'], d['gameReleaseDate'], d['gameAgeRating'], d['gameDeveloper'], d['gamePlatforms'], d['gameDescription'], d['gameUserRating'], d['gameActors']] for d in gamesList]
+)
 # Root directory for the website
 @views.route("/")
 def home():
@@ -101,18 +114,6 @@ def logout():
     
 @views.route("/games/")
 def games():
-   # Load the JSON data from the file
-    with open("games.json", "r") as file:
-        data = json.load(file)
-        gamesList = data["Games"]
-        
-    with sqlite3.connect('database.db') as conn:
-        cursor = conn.cursor()
-        cursor.executemany(
-    "INSERT OR IGNORE INTO GAMES(gameID, gameName, gameReleaseDate, gameAgeRating, gameDeveloper, gamePlatforms, gameDescription, gameUserRating, gameActors) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
-    [[d['gameID'], d['gameName'], d['gameReleaseDate'], d['gameAgeRating'], d['gameDeveloper'], d['gamePlatforms'], d['gameDescription'], d['gameUserRating'], d['gameActors']] for d in gamesList]
-)
-
     id = request.args.get('id','')
     if id:
         connect = sqlite3.connect('database.db') 
@@ -129,8 +130,29 @@ def games():
     else:  
         # If no game id redirect to home
         return render_template('index.html')
-       
 
     
+@views.route("/allGames/")
+def allGames():
+     # Load the JSON data from the file
+    with open("games.json", "r") as file:
+        data = json.load(file)
+        gamesList = data["Games"]
+    
+    connect = sqlite3.connect('database.db') 
+    cursor = connect.cursor()
+    cursor.execute('SELECT * FROM GAMES')
+    gameData = cursor.fetchall()
+    
+    if gameData:
+        keys = ["gameID", "gameName", "gameReleaseDate", "gameAgeRating", "gameDeveloper", "gamePlatforms", "gameDescription", "gameUserRating", "gameActors"]
+        gameDataList = [dict(zip(keys, game)) for game in gameData]
+        print(gameDataList)
 
-        
+
+        # If game data is found redirect with game data
+        return render_template('gameCatalog.html',games=gameDataList)
+    else:  
+        # If no game id redirect to home
+        return render_template('index.html')
+    
