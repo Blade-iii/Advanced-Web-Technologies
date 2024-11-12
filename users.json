@@ -1,14 +1,1 @@
-[
-    {
-        "id": 1,
-        "email": "Test1@gmail.com",
-        "password": "$2b$12$pgXBfHLjoFcDqqM3mbowbublwSoMlDUKxX.UO/pI7iTgOx/ySoQQ6",
-        "name": "test"
-    },
-    {
-        "id": 2,
-        "email": "root@gmail.com",
-        "password": "$2b$12$M2.1j0aybRRJCl.7Q6f45u.zKQh/nF4LjaPo9dYFMDUEej214z4aO",
-        "name": "root"
-    }
-]
+[]

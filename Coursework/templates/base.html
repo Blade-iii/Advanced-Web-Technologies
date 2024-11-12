@@ -32,7 +32,11 @@
                   Account
                 </a>
                 <ul class="dropdown-menu">
+                  {% if userName %}
+                  <li><a class="dropdown-item disabled" aria-disabled="true" href="/login">Login</a></li>
+                  {% else %}
                   <li><a class="dropdown-item" href="/login">Login</a></li>
+                  {% endif %}
                   <li><a class="dropdown-item" href="/logout">Log out</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="/register">Register</a></li>

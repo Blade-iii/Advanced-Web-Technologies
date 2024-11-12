@@ -81,7 +81,6 @@ def login():
             storedPw = result[2]
             session['userName'] = result[3] # Store user name in a session
             if bcrypt.check_password_hash(storedPw, password):
-                flash('Login Successful')
              # If the credentials are correct, redirect to the home page
                 return render_template('index.html',userName = session['userName'])
         
@@ -102,21 +101,36 @@ def logout():
     
 @views.route("/games/")
 def games():
-
    # Load the JSON data from the file
     with open("games.json", "r") as file:
         data = json.load(file)
+        gamesList = data["Games"]
         
-    games=data
     with sqlite3.connect('database.db') as conn:
         cursor = conn.cursor()
         cursor.executemany(
-    "INSERT INTO GAMES(gameID, gameName, gameReleaseDate, gameAgeRating, gameDeveloper, gamePlatforms, gameDescription, gameUserRating, gameActors) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
-    [[d['gameID'], d['gameName'], d['gameReleaseDate'], d['gameAgeRating'], d['gameDeveloper'], d['gamePlatforms'], d['gameDescription'], d['gameUserRating'], d['gameActors']] for d in data]
+    "INSERT OR IGNORE INTO GAMES(gameID, gameName, gameReleaseDate, gameAgeRating, gameDeveloper, gamePlatforms, gameDescription, gameUserRating, gameActors) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+    [[d['gameID'], d['gameName'], d['gameReleaseDate'], d['gameAgeRating'], d['gameDeveloper'], d['gamePlatforms'], d['gameDescription'], d['gameUserRating'], d['gameActors']] for d in gamesList]
 )
 
+    id = request.args.get('id','')
+    if id:
+        connect = sqlite3.connect('database.db') 
+        cursor = connect.cursor()
+        cursor.execute('SELECT * FROM GAMES WHERE gameID=?',(id,))
+        gameData = cursor.fetchone()
+        
+    if gameData:
+        keys = ["gameID", "gameName", "gameReleaseDate", "gameAgeRating", "gameDeveloper", "gamePlatforms", "gameDescription", "gameUserRating", "gameActors"]
+        gameDataDict = dict(zip(keys, gameData))
+        
+        # If game data is found redirect with game data
+        return render_template('game.html',game=gameDataDict)
+    else:  
+        # If no game id redirect to home
+        return render_template('index.html')
+       
 
-    # Pass the data to the template
-    return render_template("game.html", games=data['Games'])
+    
 
         

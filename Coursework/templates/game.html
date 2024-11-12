@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Games List</title>
-</head>
+{% extends "base.html" %}
+{% block title %} game.gameName {% endblock %}
+{% block content %} 
 <body>
-    <h1>Game List</h1>
-    {% for game in games %}
+    
         <div class="game">
             <h2>{{ game.gameName }}</h2>
             <p><strong>Release Date:</strong> {{ game.gameReleaseDate }}</p>
@@ -19,6 +14,8 @@
             <p><strong>Actors:</strong> {{ game.gameActors }}</p>
             <hr>
         </div>
-    {% endfor %}
+
 </body>
 </html>
+
+{% endblock %}
