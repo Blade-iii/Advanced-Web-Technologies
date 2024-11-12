@@ -32,6 +32,84 @@
     "gameDescription":"The Galaxy is in peril. Entire worlds are falling. The Imperium needs you. Embody the superhuman skill and brutality of a Space Marine, the greatest of the Emperor's Warriors. Unleash deadly abilities and an arsenal of devastating weaponry to obliterate the relentless Tyranid hordes.",
     "gameUserRating":8.2,
     "gameActors": "Clive Standen, Arthur Lee, Miles Yekinni"  
+},
+{
+    "gameID":4,
+    "gameName":"Call of Duty Black Ops 6",
+    "gameReleaseDate": "2024-10-25",
+    "gameAgeRating":18,
+    "gameDeveloper":"Treyarch",
+    "gamePlatforms":"PS5, PS4, Xbox One, Xbox Series X/S, PC",
+    "gameDescription":"As the Gulf War seizes the world's attention, a covert and enigmatic group has penetrated the upper echelons of the CIA, labeling those who oppose them as betrayers. Black Ops veteran Frank Woods and his squad, once celebrated as heroes by their agency and nation, now find themselves banished and pursued by the very military entity that forged them. They are now outcasts in their own land, hunted by the machinery of war that they once served.",
+    "gameUserRating":7.6,
+    "gameActors": "Damon Victor Allen, Chantelle Barry, Jordan Bielsky"  
+},
+{
+    "gameID":5,
+    "gameName":"Baldur's Gate III",
+    "gameReleaseDate": "2023-08-03",
+    "gameAgeRating":18,
+    "gameDeveloper":"Treyarch",
+    "gamePlatforms":"PS5, Xbox Series X/S, PC, macOS",
+    "gameDescription":"Return to Faerun in a tale of fellowship and betrayal, and the lure of absolute power. Mysterious abilities are awakening inside you. Resist, and turn darkness against itself, or, embrace corruption, and become ultimate evil.",
+    "gameUserRating":9.7,
+    "gameActors": "Amelia Tyler, Neil Newborn, Jennifer English"  
+},
+{
+    "gameID":6,
+    "gameName":"Last of Us Part II",
+    "gameReleaseDate": "2020-06-19",
+    "gameAgeRating":18,
+    "gameDeveloper":"Naughty Dog",
+    "gamePlatforms":"PS5, PS4",
+    "gameDescription":"Five years after the events of The Last of Us, Ellie embarks on another journey through a post-apocalyptic America on a mission of vengeance against a mysterious militia.",
+    "gameUserRating":8.8,
+    "gameActors": "Ashley Johnson, Troy Baker, Derek Phillips"  
+},
+{
+    "gameID":7,
+    "gameName":"Death Stranding",
+    "gameReleaseDate": "2019-11-08",
+    "gameAgeRating":18,
+    "gameDeveloper":"Kojima Productions",
+    "gamePlatforms":"PS5, PS4, PC, macOS",
+    "gameDescription":"Deliveryman Sam Porter must travel across a ravaged wasteland and reconnect the city states of America formed after a mysterious apocalyptic event dubbed 'death stranding' left the world in ruins and plagued by supernatural tar creatures.",
+    "gameUserRating":8.8,
+    "gameActors": "Norman Reedus, Mads Mikkelsen, Lea Seydoux"  
+},
+{
+    "gameID":8,
+    "gameName":"Metal Gear Rising: Revengeance",
+    "gameReleaseDate": "2013-02-19",
+    "gameAgeRating":18,
+    "gameDeveloper":"PlatinumGames",
+    "gamePlatforms":"PS3, Xbox 360, PC",
+    "gameDescription":"In the year 2018, cybernetic soldier Raiden goes on a mission to stop a terrorist organization from starting a war for financial gain.",
+    "gameUserRating":7.8,
+    "gameActors": "Quinton FLynn, Philip Anthony-Rodriguez, Michael Beattie"  
+},
+{
+    "gameID":9,
+    "gameName":"Wolfenstein: The New Order",
+    "gameReleaseDate": "2014-05-20",
+    "gameAgeRating":18,
+    "gameDeveloper":"MachineGames",
+    "gamePlatforms":"PS3, PS4 Xbox 360, Xbox One, PC",
+    "gameDescription":"After regaining consciousness following an injury sustained in World War II, legendary American commando, B.J. Blazkowicz, awakens from a coma in a dystopian Nazi dominated world of 1960s. He tries to locate the remnants of the resistance.",
+    "gameUserRating":8.2,
+    "gameActors": "Brian Bloom, Alicja Bachleda, Gideon Emery"  
+},
+{
+    "gameID":10,
+    "gameName":"Resident Evil 4",
+    "gameReleaseDate": "2023-03-24",
+    "gameAgeRating":18,
+    "gameDeveloper":"Capcom",
+    "gamePlatforms":"PS5, PS4, Xbox Series X/S, PC, macOS",
+    "gameDescription":"In this reimagining of the 2005 game, Leon Kennedy is sent on a mission to rescue the president's kidnapped daughter from a secluded European village where there is something terribly wrong with the locals.",
+    "gameUserRating":8.2,
+    "gameActors": "Nick Apostolides, Genevieve Buechner, Andre Pena"  
 }
+
     ]
 }
