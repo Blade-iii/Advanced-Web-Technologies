@@ -81,7 +81,6 @@ def login():
             storedPw = result[2]
             session['userName'] = result[3] # Store user name in a session
             if bcrypt.check_password_hash(storedPw, password):
-                flash('Login Successful')
              # If the credentials are correct, redirect to the home page
                 return render_template('index.html',userName = session['userName'])
         

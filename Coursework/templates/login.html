@@ -19,6 +19,15 @@
   </div>
 </form>
 
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+
+  {% for message in messages %}
+  <center> <p>{{message | safe}}</p></center>
+  {%endfor%}
+{% endif %}
+{% endwith %}
+
 {% endblock %}
 
 
