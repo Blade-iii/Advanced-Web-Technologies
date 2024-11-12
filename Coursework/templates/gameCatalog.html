@@ -3,85 +3,19 @@
 {% block title %}Games Catalog{% endblock %}
 
 {% block content %}
-<body>
-    <div class="container">
-        <h3 class="page-title">All Games</h3>
-        <div class="games-list">
-            {% for game in games %}
-                <div class="game-card">
-                    <h4 class="game-title">{{ game.gameName }}</h4>
-                    <p><strong>Release Date:</strong> {{ game.gameReleaseDate }}</p>
-                    <p><strong>Age Rating:</strong> {{ game.gameAgeRating }}</p>
-                    <p><strong>Developer:</strong> {{ game.gameDeveloper }}</p>
-                    <p><strong>Platforms:</strong> {{ game.gamePlatforms }}</p>
-                    <p><strong>Description:</strong> {{ game.gameDescription }}</p>
-                    <p><strong>User Rating:</strong> {{ game.gameUserRating }}</p>
-                    <p><strong>Actors:</strong> {{ game.gameActors }}</p>
+<div class="container">
+    <div class="row justify-content-center">
+        {% for game in games %}
+            <div class="col-md-4  mb-4">
+                <div class="game-card" style="width: 100%; min-height: 250px;">
+                    <a href="/games/?id={{game.gameID}}"> <img src="{{ game.gamePoster }}" class="card-img-top" alt="{{ game.gameName }} poster" style="height: 250px; object-fit: cover;"></a>
+                    <div class="card-title">
+                        <h5 class="card-title">{{ game.gameName }}</h5>
+                    </div>
                 </div>
-                <hr class="separator">
-            {% endfor %}
-        </div>
+            </div>
+        {% endfor %}
     </div>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .page-title {
-            text-align: center;
-            font-size: 2.5em;
-            margin-bottom: 40px;
-            color: #2c3e50;
-        }
-
-        .games-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .game-card {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            transition: transform 0.2s ease-in-out;
-        }
-
-        .game-card:hover {
-            transform: scale(1.05);
-        }
-
-        .game-title {
-            font-size: 1.6em;
-            color: #3498db;
-            margin-bottom: 15px;
-        }
-
-        p {
-            margin: 10px 0;
-            line-height: 1.6;
-        }
-
-        .separator {
-            border: 0;
-            height: 1px;
-            background-color: #ddd;
-            margin: 20px 0;
-        }
-    </style>
-</body>
+</div>
 {% endblock %}
+
