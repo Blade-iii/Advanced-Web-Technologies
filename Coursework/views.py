@@ -1,7 +1,8 @@
-from flask import Blueprint, render_template , redirect , url_for, request, flash # Import libraries from flask
+from flask import Blueprint, render_template , redirect , url_for, request, flash,session # Import libraries from flask
 import sqlite3 # import SQLite 3 to create and access a database
 import json # Import Json Library
 from flask_bcrypt import Bcrypt
+import datetime
 
 bcrypt = Bcrypt()
 views = Blueprint('views', __name__)  # Allows this Python file to be used as a blueprint
@@ -10,6 +11,9 @@ views = Blueprint('views', __name__)  # Allows this Python file to be used as a 
 connect = sqlite3.connect('database.db')  
 connect.execute(
     'CREATE TABLE IF NOT EXISTS USERS(userID INTEGER PRIMARY KEY AUTOINCREMENT,email TEXT NOT NULL UNIQUE, password TEXT NOT NULL UNIQUE, personName TEXT NOT NULL)'
+)
+connect.execute(
+    'CREATE TABLE IF NOT EXISTS GAMES(gameID INTEGER PRIMARY KEY,gameName TEXT NOT NULL,gameReleaseDate TEXT NOT NULL, gameAgeRating INTEGER NOT NULL, gameDeveloper TEXT NOT NULL, gamePlatforms TEXT NOT NULL, gameDescription TEXT NOT NULL, gameUserRating REAL, gameActors TEXT NOT NULL )'
 )
 
 cursor = connect.cursor()
@@ -71,13 +75,15 @@ def login():
             cursor = conn.cursor()
             cursor.execute('SELECT * FROM USERS WHERE email = ?', (email,))
             result = cursor.fetchone()  # Fetch the user record
+           
         
         if result:
             storedPw = result[2]
+            session['userName'] = result[3] # Store user name in a session
             if bcrypt.check_password_hash(storedPw, password):
                 flash('Login Successful')
              # If the credentials are correct, redirect to the home page
-                return render_template('index.html')
+                return render_template('index.html',userName = session['userName'])
         
         else:
             # If incorrect, display an error message
@@ -85,7 +91,32 @@ def login():
             return render_template('login.html')
     
     return render_template('login.html')
-    
 
- 
+@views.route("/logout/")
+def logout():
+    if session['userName'] != None:
+        session.pop('userName', None)
+        return render_template('index.html')
+    else:
+        return render_template('index.html')
+    
+@views.route("/games/")
+def games():
+
+   # Load the JSON data from the file
+    with open("games.json", "r") as file:
+        data = json.load(file)
+        
+    games=data
+    with sqlite3.connect('database.db') as conn:
+        cursor = conn.cursor()
+        cursor.executemany(
+    "INSERT INTO GAMES(gameID, gameName, gameReleaseDate, gameAgeRating, gameDeveloper, gamePlatforms, gameDescription, gameUserRating, gameActors) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+    [[d['gameID'], d['gameName'], d['gameReleaseDate'], d['gameAgeRating'], d['gameDeveloper'], d['gamePlatforms'], d['gameDescription'], d['gameUserRating'], d['gameActors']] for d in data]
+)
+
+
+    # Pass the data to the template
+    return render_template("game.html", games=data['Games'])
+
         

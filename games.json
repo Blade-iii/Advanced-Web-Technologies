@@ -1,0 +1,26 @@
+{
+    "Games":[
+{
+    "gameID":1,
+    "gameName":"The Last of Us",
+    "gameReleaseDate":"2013-06-14",
+    "gameAgeRating":18,
+    "gameDeveloper":"Naughty Dog",
+    "gamePlatforms":"PS3, PS4",
+    "gameDescription":"In a hostile, post-pandemic world, Joel and Ellie, brought together by desperate circumstances, must rely on each other to survive a brutal journey across what remains of the United States.",
+    "gameUserRating":9.7,
+    "gameActors": "Troy Baker, Ashley Johnson, Hana Hayes"
+},
+{
+    "gameID":2,
+    "gameName":"Final Fantasy 16",
+    "gameReleaseDate": "2013-06-14",
+    "gameAgeRating":18,
+    "gameDeveloper":"Square Enix Creative",
+    "gamePlatforms":"PS5, PC",
+    "gameDescription":"As a malady known as the Blight ravages the land of Valisthea and its realms plunge into war, Clive Rosfield, the firstborn son of the Archduke of Rosaria, sets out on a dark, dangerous journey to revenge following a tragedy.",
+    "gameUserRating":8.7,
+    "gameActors": "Ben Starr, Susannah Fielding, Ralph Ineson"  
+}
+    ]
+}

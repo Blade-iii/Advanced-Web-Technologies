@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games List</title>
+</head>
+<body>
+    <h1>Game List</h1>
+    {% for game in games %}
+        <div class="game">
+            <h2>{{ game.gameName }}</h2>
+            <p><strong>Release Date:</strong> {{ game.gameReleaseDate }}</p>
+            <p><strong>Age Rating:</strong> {{ game.gameAgeRating }}</p>
+            <p><strong>Developer:</strong> {{ game.gameDeveloper }}</p>
+            <p><strong>Platforms:</strong> {{ game.gamePlatforms}}</p>
+            <p><strong>Description:</strong> {{ game.gameDescription }}</p>
+            <p><strong>User Rating:</strong> {{ game.gameUserRating }}</p>
+            <p><strong>Actors:</strong> {{ game.gameActors }}</p>
+            <hr>
+        </div>
+    {% endfor %}
+</body>
+</html>
