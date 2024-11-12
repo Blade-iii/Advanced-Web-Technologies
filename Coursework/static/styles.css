@@ -18,3 +18,19 @@ h3{
     max-height: 1206px; /* This ensures the images won't exceed the max height */
 }
 
+.card-body {
+    margin: 0px;
+    padding: 8px 12px; 
+}
+
+h5{
+    padding-top: 5px;
+    text-align: center;
+}
+.game-card:hover {
+    transform: scale(1.15);
+}
+
+.carousel-inner:hover{
+    transform: scale(1.05);
+}

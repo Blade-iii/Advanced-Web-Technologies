@@ -9,7 +9,8 @@
     "gamePlatforms":"PS5, PC",
     "gameDescription":"As a malady known as the Blight ravages the land of Valisthea and its realms plunge into war, Clive Rosfield, the firstborn son of the Archduke of Rosaria, sets out on a dark, dangerous journey to revenge following a tragedy.",
     "gameUserRating":8.7,
-    "gameActors": "Ben Starr, Susannah Fielding, Ralph Ineson"  
+    "gameActors": "Ben Starr, Susannah Fielding, Ralph Ineson",
+    "gamePoster":"/static/ff16.jpg"
 },
 {
     "gameID":2,
@@ -20,7 +21,8 @@
     "gamePlatforms":"PS5, PS4, Xbox One, Xbox Series X/S, PC",
     "gameDescription":"In a dark fantasy world created by Hidetaka Miyazaki (Dark Souls) and George R. R. Martin (A Song of Ice and Fire), the player is a Tarnished who is called back to the Lands Between to restore the Elden Ring and become the Elden Lord.",
     "gameUserRating":9.4,
-    "gameActors": "Martha Mackintosh, Anthony Howell, Con O'Neil"  
+    "gameActors": "Martha Mackintosh, Anthony Howell, Con O'Neil",
+    "gamePoster":"/static/eldenRing.jpg"  
 },
 {
     "gameID":3,
@@ -31,7 +33,8 @@
     "gamePlatforms":"PS5, Xbox Series X/S, PC",
     "gameDescription":"The Galaxy is in peril. Entire worlds are falling. The Imperium needs you. Embody the superhuman skill and brutality of a Space Marine, the greatest of the Emperor's Warriors. Unleash deadly abilities and an arsenal of devastating weaponry to obliterate the relentless Tyranid hordes.",
     "gameUserRating":8.2,
-    "gameActors": "Clive Standen, Arthur Lee, Miles Yekinni"  
+    "gameActors": "Clive Standen, Arthur Lee, Miles Yekinni",
+    "gamePoster":"/static/spaceMarine.jpg"   
 },
 {
     "gameID":4,
@@ -42,7 +45,8 @@
     "gamePlatforms":"PS5, PS4, Xbox One, Xbox Series X/S, PC",
     "gameDescription":"As the Gulf War seizes the world's attention, a covert and enigmatic group has penetrated the upper echelons of the CIA, labeling those who oppose them as betrayers. Black Ops veteran Frank Woods and his squad, once celebrated as heroes by their agency and nation, now find themselves banished and pursued by the very military entity that forged them. They are now outcasts in their own land, hunted by the machinery of war that they once served.",
     "gameUserRating":7.6,
-    "gameActors": "Damon Victor Allen, Chantelle Barry, Jordan Bielsky"  
+    "gameActors": "Damon Victor Allen, Chantelle Barry, Jordan Bielsky",
+    "gamePoster":"/static/cod.jpg"  
 },
 {
     "gameID":5,
@@ -53,7 +57,8 @@
     "gamePlatforms":"PS5, Xbox Series X/S, PC, macOS",
     "gameDescription":"Return to Faerun in a tale of fellowship and betrayal, and the lure of absolute power. Mysterious abilities are awakening inside you. Resist, and turn darkness against itself, or, embrace corruption, and become ultimate evil.",
     "gameUserRating":9.7,
-    "gameActors": "Amelia Tyler, Neil Newborn, Jennifer English"  
+    "gameActors": "Amelia Tyler, Neil Newborn, Jennifer English",
+    "gamePoster":"/static/bg3.jpg"     
 },
 {
     "gameID":6,
@@ -64,7 +69,8 @@
     "gamePlatforms":"PS5, PS4",
     "gameDescription":"Five years after the events of The Last of Us, Ellie embarks on another journey through a post-apocalyptic America on a mission of vengeance against a mysterious militia.",
     "gameUserRating":8.8,
-    "gameActors": "Ashley Johnson, Troy Baker, Derek Phillips"  
+    "gameActors": "Ashley Johnson, Troy Baker, Derek Phillips",
+    "gamePoster":"/static/lou1.jpg"    
 },
 {
     "gameID":7,
@@ -75,7 +81,8 @@
     "gamePlatforms":"PS5, PS4, PC, macOS",
     "gameDescription":"Deliveryman Sam Porter must travel across a ravaged wasteland and reconnect the city states of America formed after a mysterious apocalyptic event dubbed 'death stranding' left the world in ruins and plagued by supernatural tar creatures.",
     "gameUserRating":8.8,
-    "gameActors": "Norman Reedus, Mads Mikkelsen, Lea Seydoux"  
+    "gameActors": "Norman Reedus, Mads Mikkelsen, Lea Seydoux",
+    "gamePoster":"/static/ds.jpg"     
 },
 {
     "gameID":8,
@@ -86,7 +93,8 @@
     "gamePlatforms":"PS3, Xbox 360, PC",
     "gameDescription":"In the year 2018, cybernetic soldier Raiden goes on a mission to stop a terrorist organization from starting a war for financial gain.",
     "gameUserRating":7.8,
-    "gameActors": "Quinton FLynn, Philip Anthony-Rodriguez, Michael Beattie"  
+    "gameActors": "Quinton FLynn, Philip Anthony-Rodriguez, Michael Beattie",
+    "gamePoster":"/static/mgr.jpg"    
 },
 {
     "gameID":9,
@@ -97,7 +105,8 @@
     "gamePlatforms":"PS3, PS4 Xbox 360, Xbox One, PC",
     "gameDescription":"After regaining consciousness following an injury sustained in World War II, legendary American commando, B.J. Blazkowicz, awakens from a coma in a dystopian Nazi dominated world of 1960s. He tries to locate the remnants of the resistance.",
     "gameUserRating":8.2,
-    "gameActors": "Brian Bloom, Alicja Bachleda, Gideon Emery"  
+    "gameActors": "Brian Bloom, Alicja Bachleda, Gideon Emery",
+    "gamePoster":"/static/wolf.jpg"     
 },
 {
     "gameID":10,
@@ -108,7 +117,8 @@
     "gamePlatforms":"PS5, PS4, Xbox Series X/S, PC, macOS",
     "gameDescription":"In this reimagining of the 2005 game, Leon Kennedy is sent on a mission to rescue the president's kidnapped daughter from a secluded European village where there is something terribly wrong with the locals.",
     "gameUserRating":8.2,
-    "gameActors": "Nick Apostolides, Genevieve Buechner, Andre Pena"  
+    "gameActors": "Nick Apostolides, Genevieve Buechner, Andre Pena",
+    "gamePoster":"/static/re4.jpg"     
 }
 
     ]

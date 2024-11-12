@@ -13,7 +13,7 @@ connect.execute(
     'CREATE TABLE IF NOT EXISTS USERS(userID INTEGER PRIMARY KEY AUTOINCREMENT,email TEXT NOT NULL UNIQUE, password TEXT NOT NULL UNIQUE, personName TEXT NOT NULL)'
 )
 connect.execute(
-    'CREATE TABLE IF NOT EXISTS GAMES(gameID INTEGER PRIMARY KEY,gameName TEXT NOT NULL,gameReleaseDate TEXT NOT NULL, gameAgeRating INTEGER NOT NULL, gameDeveloper TEXT NOT NULL, gamePlatforms TEXT NOT NULL, gameDescription TEXT NOT NULL, gameUserRating REAL, gameActors TEXT NOT NULL )'
+    'CREATE TABLE IF NOT EXISTS GAMES(gameID INTEGER PRIMARY KEY,gameName TEXT NOT NULL,gameReleaseDate TEXT NOT NULL, gameAgeRating INTEGER NOT NULL, gameDeveloper TEXT NOT NULL, gamePlatforms TEXT NOT NULL, gameDescription TEXT NOT NULL, gameUserRating REAL, gameActors TEXT NOT NULL, gamePoster TEXT )'
 )
 
 cursor = connect.cursor()
@@ -41,9 +41,10 @@ with open("games.json", "r") as file:
 with sqlite3.connect('database.db') as conn:
     cursor = conn.cursor()
     cursor.executemany(
-    "INSERT OR IGNORE INTO GAMES(gameID, gameName, gameReleaseDate, gameAgeRating, gameDeveloper, gamePlatforms, gameDescription, gameUserRating, gameActors) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
-    [[d['gameID'], d['gameName'], d['gameReleaseDate'], d['gameAgeRating'], d['gameDeveloper'], d['gamePlatforms'], d['gameDescription'], d['gameUserRating'], d['gameActors']] for d in gamesList]
+    "INSERT OR IGNORE INTO GAMES(gameID, gameName, gameReleaseDate, gameAgeRating, gameDeveloper, gamePlatforms, gameDescription, gameUserRating, gameActors, gamePoster) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,?)",
+    [[d.get('gameID'), d.get('gameName'), d.get('gameReleaseDate'), d.get('gameAgeRating'), d.get('gameDeveloper'), d.get('gamePlatforms'), d.get('gameDescription'), d.get('gameUserRating'), d.get('gameActors'), d.get('gamePoster', None)] for d in gamesList]
 )
+
 # Root directory for the website
 @views.route("/")
 def home():
@@ -122,7 +123,7 @@ def games():
         gameData = cursor.fetchone()
         
     if gameData:
-        keys = ["gameID", "gameName", "gameReleaseDate", "gameAgeRating", "gameDeveloper", "gamePlatforms", "gameDescription", "gameUserRating", "gameActors"]
+        keys = ["gameID", "gameName", "gameReleaseDate", "gameAgeRating", "gameDeveloper", "gamePlatforms", "gameDescription", "gameUserRating", "gameActors","gamePoster"]
         gameDataDict = dict(zip(keys, gameData))
         
         # If game data is found redirect with game data
@@ -141,11 +142,11 @@ def allGames():
     
     connect = sqlite3.connect('database.db') 
     cursor = connect.cursor()
-    cursor.execute('SELECT * FROM GAMES')
+    cursor.execute('SELECT * FROM GAMES ORDER BY gameName ASC')
     gameData = cursor.fetchall()
     
     if gameData:
-        keys = ["gameID", "gameName", "gameReleaseDate", "gameAgeRating", "gameDeveloper", "gamePlatforms", "gameDescription", "gameUserRating", "gameActors"]
+        keys = ["gameID", "gameName", "gameReleaseDate", "gameAgeRating", "gameDeveloper", "gamePlatforms", "gameDescription", "gameUserRating", "gameActors","gamePoster"]
         gameDataList = [dict(zip(keys, game)) for game in gameData]
         print(gameDataList)
 

@@ -2,21 +2,20 @@
 
 {% block title %}Games Catalog{% endblock %}
 
-{% block content %} 
-<body>
-    <div class="game">
-        <h3>All Games</h3>
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
         {% for game in games %}
-            <p><strong>Game Name:</strong> {{ game.gameName }}</p>
-            <p><strong>Release Date:</strong> {{ game.gameReleaseDate }}</p>
-            <p><strong>Age Rating:</strong> {{ game.gameAgeRating }}</p>
-            <p><strong>Developer:</strong> {{ game.gameDeveloper }}</p>
-            <p><strong>Platforms:</strong> {{ game.gamePlatforms }}</p>
-            <p><strong>Description:</strong> {{ game.gameDescription }}</p>
-            <p><strong>User Rating:</strong> {{ game.gameUserRating }}</p>
-            <p><strong>Actors:</strong> {{ game.gameActors }}</p>
-            <hr>
+            <div class="col-md-4  mb-4">
+                <div class="game-card" style="width: 100%; min-height: 250px;">
+                    <a href="/games/?id={{game.gameID}}"> <img src="{{ game.gamePoster }}" class="card-img-top" alt="{{ game.gameName }} poster" style="height: 250px; object-fit: cover;"></a>
+                    <div class="card-title">
+                        <h5 class="card-title">{{ game.gameName }}</h5>
+                    </div>
+                </div>
+            </div>
         {% endfor %}
     </div>
-</body>
+</div>
 {% endblock %}
+
