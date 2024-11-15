@@ -1,0 +1,36 @@
+name: Create Release on Push to Main
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up GitHub CLI
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'
+
+    - name: Create a release
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        TAG_NAME="latest"
+        RELEASE_NAME="Latest Release"
+        RELEASE_BODY="Automatically generated release on push to main."
+        
+        # Check if the tag already exists
+        if gh release view "$TAG_NAME" &>/dev/null; then
+          echo "Updating existing release..."
+          gh release edit "$TAG_NAME" --title "$RELEASE_NAME" --notes "$RELEASE_BODY" --prerelease=false
+        else
+          echo "Creating a new release..."
+          gh release create "$TAG_NAME" --title "$RELEASE_NAME" --notes "$RELEASE_BODY"
+        fi
