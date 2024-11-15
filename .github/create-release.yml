@@ -1,4 +1,4 @@
-name: Create Release on Push to Main
+name: Create Release on Push to Master
 
 on:
   push:
@@ -13,10 +13,16 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Set up GitHub CLI
-      uses: actions/setup-node@v3
-      with:
-        node-version: '16'
+    - name: Install GitHub CLI
+      run: |
+        sudo apt update
+        sudo apt install -y gh
+
+    - name: Authenticate GitHub CLI
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        echo $GITHUB_TOKEN | gh auth login --with-token
 
     - name: Create a release
       env:
@@ -24,13 +30,7 @@ jobs:
       run: |
         TAG_NAME="latest"
         RELEASE_NAME="Latest Release"
-        RELEASE_BODY="Automatically generated release on push to main."
-        
-        # Check if the tag already exists
-        if gh release view "$TAG_NAME" &>/dev/null; then
-          echo "Updating existing release..."
-          gh release edit "$TAG_NAME" --title "$RELEASE_NAME" --notes "$RELEASE_BODY" --prerelease=false
-        else
-          echo "Creating a new release..."
-          gh release create "$TAG_NAME" --title "$RELEASE_NAME" --notes "$RELEASE_BODY"
-        fi
+        RELEASE_BODY="Automatically generated release on push to master."
+
+        # Create or update the release
+        gh release create "$TAG_NAME" --title "$RELEASE_NAME" --notes "$RELEASE_BODY" --clobber
