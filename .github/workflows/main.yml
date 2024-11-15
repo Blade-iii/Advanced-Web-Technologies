@@ -21,7 +21,21 @@ jobs:
         sudo apt update
         sudo apt install -y gh
 
-    - name: Create a release
+    - name: Delete existing release (if exists)
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        TAG_NAME="latest"
+        
+        # Check if the release exists and delete it if it does
+        if gh release view "$TAG_NAME" &>/dev/null; then
+          echo "Deleting existing release with tag $TAG_NAME..."
+          gh release delete "$TAG_NAME" -y
+        else
+          echo "No existing release found with tag $TAG_NAME."
+        fi
+
+    - name: Create a new release
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
@@ -29,5 +43,5 @@ jobs:
         RELEASE_NAME="Latest Release"
         RELEASE_BODY="Automatically generated release on push to master."
 
-        # Create or update the release
-        gh release create "$TAG_NAME" --title "$RELEASE_NAME" --notes "$RELEASE_BODY" --clobber
+        echo "Creating a new release with tag $TAG_NAME..."
+        gh release create "$TAG_NAME" --title "$RELEASE_NAME" --notes "$RELEASE_BODY" --latest
