@@ -102,6 +102,9 @@ def login():
             # If incorrect, display an error message
             flash('Incorrect email or password. Please try again.', 'danger')
             return render_template('login.html')
+        
+        if session['userName']:
+            return redirect(url_for('/'))
     
     return render_template('login.html')
 
