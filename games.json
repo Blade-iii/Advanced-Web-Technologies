@@ -70,7 +70,7 @@
     "gameDescription":"Five years after the events of The Last of Us, Ellie embarks on another journey through a post-apocalyptic America on a mission of vengeance against a mysterious militia.",
     "gameUserRating":8.8,
     "gameActors": "Ashley Johnson, Troy Baker, Derek Phillips",
-    "gamePoster":"/static/lou1.jpg"    
+    "gamePoster":"/static/lou2.jpg"    
 },
 {
     "gameID":7,
@@ -106,7 +106,7 @@
     "gameDescription":"After regaining consciousness following an injury sustained in World War II, legendary American commando, B.J. Blazkowicz, awakens from a coma in a dystopian Nazi dominated world of 1960s. He tries to locate the remnants of the resistance.",
     "gameUserRating":8.2,
     "gameActors": "Brian Bloom, Alicja Bachleda, Gideon Emery",
-    "gamePoster":"/static/wolf.jpg"     
+    "gamePoster":"/static/wolf.png"     
 },
 {
     "gameID":10,

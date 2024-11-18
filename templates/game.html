@@ -2,18 +2,18 @@
 {% block title %} game.gameName {% endblock %}
 {% block content %} 
 <h2>{{game.gameName}}</h2>
-<body>
+
         <center>
             <br>
+      <div class="single-card">
         <div class="card mb-3" style="max-width: 1000px;">
-            
             <div class="row g-0">
               <div class="col-md-4">
                 <img src="{{game.gamePoster}}" class="img-fluid rounded-start" alt="Space marine 2 poster">
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h5 class="card-title">{{game.gameName}}</h5>
+                  <!-- <h5 class="card-title">{{game.gameName}}</h5> -->
                   <p class="card-text"><strong>Age Rating: </strong>{{game.gameAgeRating}}</p>
                   <p class="card-text"><strong>Developer: </strong>{{game.gameDeveloper}}</p>
                   <p class="card-text"><strong>Platforms: </strong>{{game.gamePlatforms}}</p>
@@ -23,7 +23,6 @@
               </div>
             </div>
           </div>
+      </div>
         </center>
-</body>
-</html>
 {% endblock %}
