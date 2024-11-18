@@ -10,7 +10,8 @@
     "gameDescription":"As a malady known as the Blight ravages the land of Valisthea and its realms plunge into war, Clive Rosfield, the firstborn son of the Archduke of Rosaria, sets out on a dark, dangerous journey to revenge following a tragedy.",
     "gameUserRating":8.7,
     "gameActors": "Ben Starr, Susannah Fielding, Ralph Ineson",
-    "gamePoster":"/static/ff16.jpg"
+    "gamePoster":"/static/ff16.jpg",
+    "gameTrailer":"https://youtu.be/iaJ4VVFGIa8?si=mjUXfnQYkEkCcj3r"
 },
 {
     "gameID":2,
@@ -22,7 +23,8 @@
     "gameDescription":"In a dark fantasy world created by Hidetaka Miyazaki (Dark Souls) and George R. R. Martin (A Song of Ice and Fire), the player is a Tarnished who is called back to the Lands Between to restore the Elden Ring and become the Elden Lord.",
     "gameUserRating":9.4,
     "gameActors": "Martha Mackintosh, Anthony Howell, Con O'Neil",
-    "gamePoster":"/static/eldenRing.jpg"  
+    "gamePoster":"/static/eldenRing.jpg", 
+    "gameTrailer":"https://youtu.be/AKXiKBnzpBQ?si=aDJQIS1K8YrdUOcj"
 },
 {
     "gameID":3,
@@ -34,7 +36,8 @@
     "gameDescription":"The Galaxy is in peril. Entire worlds are falling. The Imperium needs you. Embody the superhuman skill and brutality of a Space Marine, the greatest of the Emperor's Warriors. Unleash deadly abilities and an arsenal of devastating weaponry to obliterate the relentless Tyranid hordes.",
     "gameUserRating":8.2,
     "gameActors": "Clive Standen, Arthur Lee, Miles Yekinni",
-    "gamePoster":"/static/spaceMarine.jpg"   
+    "gamePoster":"/static/spaceMarine.jpg",
+    "gameTrailer":"https://youtu.be/Y15_d-1Knh0?si=0CLljs29AhYBhZHP"    
 },
 {
     "gameID":4,
@@ -46,7 +49,8 @@
     "gameDescription":"As the Gulf War seizes the world's attention, a covert and enigmatic group has penetrated the upper echelons of the CIA, labeling those who oppose them as betrayers. Black Ops veteran Frank Woods and his squad, once celebrated as heroes by their agency and nation, now find themselves banished and pursued by the very military entity that forged them. They are now outcasts in their own land, hunted by the machinery of war that they once served.",
     "gameUserRating":7.6,
     "gameActors": "Damon Victor Allen, Chantelle Barry, Jordan Bielsky",
-    "gamePoster":"/static/cod.jpg"  
+    "gamePoster":"/static/cod.jpg",
+    "gameTrailer":"https://youtu.be/h0uxvKUjsj4?si=bGMaNpy_a9Z9rciO"  
 },
 {
     "gameID":5,
@@ -58,7 +62,8 @@
     "gameDescription":"Return to Faerun in a tale of fellowship and betrayal, and the lure of absolute power. Mysterious abilities are awakening inside you. Resist, and turn darkness against itself, or, embrace corruption, and become ultimate evil.",
     "gameUserRating":9.7,
     "gameActors": "Amelia Tyler, Neil Newborn, Jennifer English",
-    "gamePoster":"/static/bg3.jpg"     
+    "gamePoster":"/static/bg3.jpg",
+    "gameTrailer":"https://youtu.be/1T22wNvoNiU?si=v78738bIp3RnJqJ-"     
 },
 {
     "gameID":6,
@@ -70,7 +75,8 @@
     "gameDescription":"Five years after the events of The Last of Us, Ellie embarks on another journey through a post-apocalyptic America on a mission of vengeance against a mysterious militia.",
     "gameUserRating":8.8,
     "gameActors": "Ashley Johnson, Troy Baker, Derek Phillips",
-    "gamePoster":"/static/lou2.jpg"    
+    "gamePoster":"/static/lou2.jpg",
+    "gameTrailer":"https://youtu.be/cxJWO3Dejj0?si=a54-ymI6nd2UhoNw"    
 },
 {
     "gameID":7,
@@ -82,7 +88,8 @@
     "gameDescription":"Deliveryman Sam Porter must travel across a ravaged wasteland and reconnect the city states of America formed after a mysterious apocalyptic event dubbed 'death stranding' left the world in ruins and plagued by supernatural tar creatures.",
     "gameUserRating":8.8,
     "gameActors": "Norman Reedus, Mads Mikkelsen, Lea Seydoux",
-    "gamePoster":"/static/ds.jpg"     
+    "gamePoster":"/static/ds.jpg",
+    "gameTrailer":"https://youtu.be/Mpn-MC2B6Zc?si=QLVDYhVxh-whbYHr"     
 },
 {
     "gameID":8,
@@ -94,7 +101,8 @@
     "gameDescription":"In the year 2018, cybernetic soldier Raiden goes on a mission to stop a terrorist organization from starting a war for financial gain.",
     "gameUserRating":7.8,
     "gameActors": "Quinton FLynn, Philip Anthony-Rodriguez, Michael Beattie",
-    "gamePoster":"/static/mgr.jpg"    
+    "gamePoster":"/static/mgr.jpg",
+    "gameTrailer":"https://youtu.be/EMCkbDnaTDM?si=I_x2URMlpISkGR-o"    
 },
 {
     "gameID":9,
@@ -106,7 +114,8 @@
     "gameDescription":"After regaining consciousness following an injury sustained in World War II, legendary American commando, B.J. Blazkowicz, awakens from a coma in a dystopian Nazi dominated world of 1960s. He tries to locate the remnants of the resistance.",
     "gameUserRating":8.2,
     "gameActors": "Brian Bloom, Alicja Bachleda, Gideon Emery",
-    "gamePoster":"/static/wolf.png"     
+    "gamePoster":"/static/wolf.png",
+    "gameTrailer":"https://youtu.be/LuCaBp9wgtE?si=QopizFz-zTeMK6_7"     
 },
 {
     "gameID":10,
@@ -118,7 +127,34 @@
     "gameDescription":"In this reimagining of the 2005 game, Leon Kennedy is sent on a mission to rescue the president's kidnapped daughter from a secluded European village where there is something terribly wrong with the locals.",
     "gameUserRating":8.2,
     "gameActors": "Nick Apostolides, Genevieve Buechner, Andre Pena",
-    "gamePoster":"/static/re4.jpg"     
+    "gamePoster":"/static/re4.jpg",
+    "gameTrailer":"https://youtu.be/j5Ic2z3_xp0?si=qmrYHgA23CZfR4IV"     
+},
+{
+    "gameID":11,
+    "gameName":"Last of Us",
+    "gameReleaseDate": "2013-06-14",
+    "gameAgeRating":18,
+    "gameDeveloper":"Naughty Dog",
+    "gamePlatforms":"PS4, PS3",
+    "gameDescription":"In a hostile, post-pandemic world, Joel and Ellie, brought together by desperate circumstances, must rely on each other to survive a brutal journey across what remains of the United States.",
+    "gameUserRating":9.7,
+    "gameActors": "Troy Baker, Ashley Johnson, Hana Hayes",
+    "gamePoster":"/static/lou1.jpg",
+    "gameTrailer":"https://youtu.be/46ohP30YA_Y?si=5gK04ku28bYDmjTf"     
+},
+{
+    "gameID":12,
+    "gameName":"Final Fantasy VII Rebirth",
+    "gameReleaseDate": "2024-06-14",
+    "gameAgeRating":16,
+    "gameDeveloper":"Square Enix Creative",
+    "gamePlatforms":"PS5",
+    "gameDescription":"Leaving Midgar behind and freed from the course of destiny, Cloud and his friends embark on a new journey across the planet of Gaia, as dangerous threats, old and new, await them.",
+    "gameUserRating":9.1,
+    "gameActors": "Cody Christian, Briana White, Britt Baron",
+    "gamePoster":"/static/ff7.jpg" ,
+    "gameTrailer":"https://youtu.be/KOhs9ZLImgE?si=4GmwtMvt8HcRsYXC"    
 }
 
     ]
