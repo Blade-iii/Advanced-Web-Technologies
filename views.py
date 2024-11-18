@@ -126,7 +126,7 @@ def games():
         gameData = cursor.fetchone()
         
     if gameData:
-        keys = ["gameID", "gameName", "gameReleaseDate", "gameAgeRating", "gameDeveloper", "gamePlatforms", "gameDescription", "gameUserRating", "gameActors","gamePoster"]
+        keys = ["gameID", "gameName", "gameReleaseDate", "gameAgeRating", "gameDeveloper", "gamePlatforms", "gameDescription", "gameUserRating", "gameActors","gamePoster","gameTrailer"]
         gameDataDict = dict(zip(keys, gameData))
         
         # If game data is found redirect with game data
@@ -149,7 +149,7 @@ def allGames():
     gameData = cursor.fetchall()
     
     if gameData:
-        keys = ["gameID", "gameName", "gameReleaseDate", "gameAgeRating", "gameDeveloper", "gamePlatforms", "gameDescription", "gameUserRating", "gameActors","gamePoster"]
+        keys = ["gameID", "gameName", "gameReleaseDate", "gameAgeRating", "gameDeveloper", "gamePlatforms", "gameDescription", "gameUserRating", "gameActors","gamePoster","gameTrailer"]
         gameDataList = [dict(zip(keys, game)) for game in gameData]
         print(gameDataList)
 
