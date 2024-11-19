@@ -19,6 +19,9 @@ h5{
     padding-top: 5px;
     text-align: center;
 }
+.card-title{
+    color: #00bcd4;
+}
 
 .form-text{
     color:#d3d3d3;
