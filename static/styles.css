@@ -1,13 +1,31 @@
+body{
+background-color: #121212;
+}
+
+p{
+    color: #d3d3d3
+}
 h1{
     text-align: center;
+    color: #d3d3d3;  
+}
+h2, h3{
+    text-align: center;
+    color: #00bcd4;
 }
 
-h2{
+h5{
+    color: #00bcd4;
+    padding-top: 5px;
     text-align: center;
 }
 
-h3{
-    text-align: center;
+.form-text{
+    color:#d3d3d3;
+}
+
+.form-label{
+    color:#00bcd4;
 }
 
 .nav-item{
@@ -26,10 +44,7 @@ h3{
     padding: 8px 12px; 
 }
 
-h5{
-    padding-top: 5px;
-    text-align: center;
-}
+
 .game-card:hover {
     transform: scale(1.15);
 }
@@ -63,10 +78,10 @@ h5{
     display: flex;
     justify-content: end;
     bottom: 10px;
-    background-color: #f5f5f5; 
-    padding-top: 1rem;
+    background-color: #1c1c1c;
+    color:#d3d3d3;
     padding-bottom: 1rem;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #00bcd4;
   }
   
   .footer .row {
