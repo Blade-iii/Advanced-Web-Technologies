@@ -13,7 +13,7 @@ connect.execute(
     'CREATE TABLE IF NOT EXISTS USERS(userID INTEGER PRIMARY KEY AUTOINCREMENT,email TEXT NOT NULL UNIQUE, password TEXT NOT NULL UNIQUE, personName TEXT NOT NULL)'
 )
 connect.execute(
-    'CREATE TABLE IF NOT EXISTS GAMES(gameID INTEGER PRIMARY KEY,gameName TEXT NOT NULL,gameReleaseDate TEXT NOT NULL, gameAgeRating INTEGER NOT NULL, gameDeveloper TEXT NOT NULL, gamePlatforms TEXT NOT NULL, gameDescription TEXT NOT NULL, gameUserRating REAL, gameActors TEXT NOT NULL, gamePoster TEXT )'
+    'CREATE TABLE IF NOT EXISTS GAMES(gameID INTEGER PRIMARY KEY,gameName TEXT NOT NULL,gameReleaseDate TEXT NOT NULL, gameAgeRating INTEGER NOT NULL, gameDeveloper TEXT NOT NULL, gamePlatforms TEXT NOT NULL, gameDescription TEXT NOT NULL, gameUserRating REAL, gameActors TEXT NOT NULL, gamePoster TEXT, gameTrailer TEXT )'
 )
 
 cursor = connect.cursor()
@@ -41,8 +41,8 @@ with open("games.json", "r") as file:
 with sqlite3.connect('database.db') as conn:
     cursor = conn.cursor()
     cursor.executemany(
-    "INSERT OR IGNORE INTO GAMES(gameID, gameName, gameReleaseDate, gameAgeRating, gameDeveloper, gamePlatforms, gameDescription, gameUserRating, gameActors, gamePoster) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,?)",
-    [[d.get('gameID'), d.get('gameName'), d.get('gameReleaseDate'), d.get('gameAgeRating'), d.get('gameDeveloper'), d.get('gamePlatforms'), d.get('gameDescription'), d.get('gameUserRating'), d.get('gameActors'), d.get('gamePoster', None)] for d in gamesList]
+    "INSERT OR IGNORE INTO GAMES(gameID, gameName, gameReleaseDate, gameAgeRating, gameDeveloper, gamePlatforms, gameDescription, gameUserRating, gameActors, gamePoster,gameTrailer) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,?,?)",
+    [[d.get('gameID'), d.get('gameName'), d.get('gameReleaseDate'), d.get('gameAgeRating'), d.get('gameDeveloper'), d.get('gamePlatforms'), d.get('gameDescription'), d.get('gameUserRating'), d.get('gameActors'), d.get('gamePoster', None), d.get('gameTrailer', None)] for d in gamesList]
 )
 
 # Root directory for the website
