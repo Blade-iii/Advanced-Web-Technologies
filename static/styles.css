@@ -36,6 +36,7 @@ h5{
 .single-card {
     display: flex;
     justify-content: center;
+    padding-bottom: 4rem;
 } 
 
 .text {
