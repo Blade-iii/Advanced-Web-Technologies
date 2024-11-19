@@ -3,7 +3,7 @@
 {% block content %} 
 <h2>{{game.gameName}}</h2>
 
-        <center>
+        
             <br>
       <div class="single-card">
         <div class="card mb-3" style="max-width: 1000px;">
@@ -13,17 +13,19 @@
               </div>
               <div class="col-md-8">
                 <div class="card-body">
+                  <div class="video">
+                    <iframe src="https://www.youtube.com/embed/{{game.gameTrailer}}?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=1&autoplay=1"  width="560" height="315"  frameborder="0" allowfullscreen></iframe>
+                  </div>
+                  <div class="text">
                   <p class="card-text"><strong>Age Rating: </strong>{{game.gameAgeRating}}</p>
                   <p class="card-text"><strong>Developer: </strong>{{game.gameDeveloper}}</p>
                   <p class="card-text"><strong>Platforms: </strong>{{game.gamePlatforms}}</p>
-                  <p class="card-text">{{game.gameDescription}}</p>
-                  <a href="{{game.gameTrailer}}">test</a>
-                  <iframe width="640" height="480" src="{{game.gameTrailer}}" frameborder="0" allowfullscreen></iframe>
+                  <p class="card-text">{{game.gameDescription}}</p> 
                   <p class="card-text"><small class="text-body-secondary"><strong>Game Actors: </strong>{{game.gameActors}}</small></p>
+                </div>
                 </div>
               </div>
             </div>
           </div>
       </div>
-        </center>
 {% endblock %}

@@ -33,8 +33,19 @@ h5{
 .game-card:hover {
     transform: scale(1.15);
 }
-.single-card:hover {
-    transform: scale(1.05);
+.single-card {
+    display: flex;
+    justify-content: center;
+} 
+
+.text {
+    text-align:left
+}
+
+
+.video{
+    display: flex;
+    justify-content: center;
 }
 
 .carousel-inner:hover{
@@ -48,7 +59,8 @@ h5{
 }
 
 .footer {
-    position: relative;
+    display: flex;
+    justify-content: end;
     bottom: 10px;
     background-color: #f5f5f5; 
     padding-top: 1rem;
