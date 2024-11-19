@@ -28,9 +28,31 @@ h5{
     color:#00bcd4;
 }
 
-.nav-item{
-    color: white;
-}
+
+.navbar-brand, .nav-link, .dropdown-item {
+    color: white !important; 
+  }
+  
+  .nav-link.active {
+    color: white !important; 
+  }
+  
+  /* Change colour of items when hover  */
+  .navbar .nav-link:hover {
+    color: #00bcd4 !important; 
+  }
+  .dropdown-item:hover{
+    color: #00bcd4 !important; 
+    background-color: black;
+  }
+  .dropdown-menu{
+    background-color: black;
+  }
+  .dropdown-divider{
+    background-color: #00bcd4;
+  }
+  
+
 
 /* Ensure all images fit the same height while keeping aspect ratio */
 .poster-img {
@@ -78,7 +100,7 @@ h5{
     display: flex;
     justify-content: end;
     bottom: 10px;
-    background-color: #1c1c1c;
+    background-color: #0e0c0c;
     color:#d3d3d3;
     padding-bottom: 1rem;
     border-top: 1px solid #00bcd4;
