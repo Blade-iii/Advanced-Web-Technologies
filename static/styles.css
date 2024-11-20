@@ -23,6 +23,10 @@ h5{
     color: #00bcd4;
 }
 
+.card-body, .col-md-4{
+    background-color: #0e0c0c;
+}
+
 .form-text{
     color:#d3d3d3;
 }
@@ -79,14 +83,13 @@ h5{
     padding-bottom: 4rem;
 } 
 
-.text {
-    text-align:left
-}
-
-
 .video{
     display: flex;
     justify-content: center;
+}
+
+.card-text{
+    color: #00bcd4;
 }
 
 .carousel-inner:hover{
