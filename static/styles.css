@@ -60,18 +60,16 @@ h5{
     background-color: #00bcd4;
   }
   
-
-
-/* Ensure all images fit the same height while keeping aspect ratio */
 .poster-img {
-    height: 100%;       /* Let the image height fill the carousel */
-    object-fit: cover;  /* Ensures images cover the space while maintaining aspect ratio */
-    max-height: 1206px; /* This ensures the images won't exceed the max height */
+    height: 100%;      
+    object-fit: cover;  
+    max-height: 1206px; 
 }
 
 .card-body {
     margin: 0px;
     padding: 8px 12px; 
+    text-align: left;
 }
 
 
@@ -79,10 +77,20 @@ h5{
     transform: scale(1.15);
 }
 .single-card {
-    display: flex;
-    justify-content: center;
+    margin: auto;
+    width: 1000px;
+    display: flex !important;
+    justify-content: center !important;
     padding-bottom: 4rem;
+    border:2px solid #d3d3d3;
+    transition: border-color 0.3s ease;
+    background-color: #0e0c0c;
 } 
+
+.single-card:hover{
+    border:2px solid #00bcd4;
+
+}
 
 .gamePoster{
     display: flex;
@@ -109,6 +117,10 @@ h5{
     padding-bottom: 10rem;
     text-align: center;
 }
+
+.allGamesCard{
+    margin-bottom: 140px;
+}
 .searchBar{
     display: flex;
     justify-content: center;
@@ -116,12 +128,13 @@ h5{
     padding-bottom: 1rem;
 }
 
+
 .footer {
     display: flex;
     position: end;
-    margin-top: auto;
+    margin-top: 4rem !important;
     background-color: #0e0c0c;
-    color:#d3d3d3;
+    color:#00bcd4;
     padding-bottom: 1rem;
     border-top: 1px solid #00bcd4;
   }
