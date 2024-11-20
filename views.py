@@ -160,3 +160,7 @@ def allGames():
         # If no game id redirect to home
         return render_template('index.html')
     
+
+@views.route("/copyright/")
+def copyright():
+    return render_template('copyright.html')
