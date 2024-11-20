@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 {% block title %} Home page {% endblock %}
 {% block content %} 
+<div class="searchBar">
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-info" type="submit">Search</button>
+    </form>
+  </div>
 <h3> Featured Games</h3>
 <br>
 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" style="max-width: 300px; max-height: 600px; margin: 0 auto;">

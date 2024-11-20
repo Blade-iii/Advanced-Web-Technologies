@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 {% block title %} {{game.gameName}} {% endblock %}
 {% block content %} 
+<div class="searchBar">
+  <form class="d-flex" role="search">
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-info" type="submit">Search</button>
+  </form>
+</div>
 <h3>{{game.gameName}}</h3>
 
         
