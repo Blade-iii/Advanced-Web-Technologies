@@ -17,7 +17,7 @@ app.register_blueprint(views, url_prefix="/")
 
 
 if __name__ == "__main__":
-    app.secret_key = 'super secret key'
+    app.secret_key = os.environ.get('SECRET_KEY', 'fallback-secret-key')  
     app.config['SESSION_TYPE'] = 'filesystem'
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
 
