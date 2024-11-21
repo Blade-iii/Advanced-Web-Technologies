@@ -7,6 +7,9 @@ import os
 app =  Flask(__name__)
 bcrypt = Bcrypt(app)
 
+app.secret_key = os.environ.get('SECRET_KEY', 'fallback-secret-key')  
+app.config['SESSION_TYPE'] = 'filesystem'
+
 app.register_blueprint(views, url_prefix="/") 
 
 # if __name__ == '__main__': # Runs the program by pressing the start button in VS
@@ -17,7 +20,7 @@ app.register_blueprint(views, url_prefix="/")
 
 
 if __name__ == "__main__":
-    app.secret_key = os.environ.get('SECRET_KEY', 'fallback-secret-key')  
-    app.config['SESSION_TYPE'] = 'filesystem'
+ 
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+
 
