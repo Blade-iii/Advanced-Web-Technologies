@@ -164,3 +164,21 @@ def allGames():
 @views.route("/copyright/")
 def copyright():
     return render_template('copyright.html')
+
+@views.route("/search" , methods=['GET', 'POST'])
+def search():
+    search = request.form['search']
+
+    if search is not None:
+        connect = sqlite3.connect('database.db') 
+        cursor = connect.cursor()
+        cursor.execute('SELECT * FROM GAMES WHERE gameName LIKE ?', ('%' + search + '%',))
+        searchData = cursor.fetchall()
+
+        keys = ["gameID", "gameName", "gameReleaseDate", "gameAgeRating", "gameDeveloper", "gamePlatforms", "gameDescription", "gameUserRating", "gameActors","gamePoster","gameTrailer"]
+        gameDataSearch = [dict(zip(keys, searchGames))for searchGames in searchData ]
+
+        return render_template('search.html', games=gameDataSearch)
+    
+    else:
+        flash('No Game found.', 'danger')
