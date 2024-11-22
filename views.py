@@ -167,18 +167,22 @@ def copyright():
 
 @views.route("/search" , methods=['GET', 'POST'])
 def search():
-    search = request.form['search']
+    if request.method =='POST':
+        search = request.form.get('search')
 
-    if search is not None:
-        connect = sqlite3.connect('database.db') 
-        cursor = connect.cursor()
-        cursor.execute('SELECT * FROM GAMES WHERE gameName LIKE ?', ('%' + search + '%',))
-        searchData = cursor.fetchall()
+        if search:
+            connect = sqlite3.connect('database.db') 
+            cursor = connect.cursor()
+            cursor.execute('SELECT * FROM GAMES WHERE gameName LIKE ?', ('%' + search + '%',))
+            searchData = cursor.fetchall()
 
-        keys = ["gameID", "gameName", "gameReleaseDate", "gameAgeRating", "gameDeveloper", "gamePlatforms", "gameDescription", "gameUserRating", "gameActors","gamePoster","gameTrailer"]
-        gameDataSearch = [dict(zip(keys, searchGames))for searchGames in searchData ]
+            keys = ["gameID", "gameName", "gameReleaseDate", "gameAgeRating", "gameDeveloper", "gamePlatforms", "gameDescription", "gameUserRating", "gameActors","gamePoster","gameTrailer"]
+            gameDataSearch = [dict(zip(keys, searchGames))for searchGames in searchData ]
 
-        return render_template('search.html', games=gameDataSearch)
-    
+            return render_template('search.html', game=gameDataSearch)
+        
+        else:
+            flash('No Game found.', 'danger')
+            return redirect(url_for('/'))
     else:
-        flash('No Game found.', 'danger')
+        return redirect(url_for('/'))
