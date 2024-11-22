@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block title %}Search{% endblock %}
 {% block content %}
+{% if games %}
 <h2>Searched Games</h2>
 <br>
 <div class="container allGamesCard">
@@ -17,6 +18,14 @@
         {% endfor %}
     </div>
 </div>
+{% else %}
+<div class="alert alert-warning" role="alert">
+    No games found for "{{ request.form.get('search') }}".
+</div>
+{% endif %}
 
+<div class="allGamesButton">
+    <a href="/" class="btn btn-outline-info">Back to Home</a>
+  </div>
 {% endblock %}
 
