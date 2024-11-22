@@ -3,7 +3,6 @@
 {% block content %}
 <h2>Searched Games</h2>
 <br>
-{% if games %}
 <div class="container allGamesCard">
     <div class="row justify-content-center">
         {% for game in games %}
@@ -18,11 +17,6 @@
         {% endfor %}
     </div>
 </div>
-{%else%}
-<div class="alert alert-warning" role="alert">
-    No games found for "{{ request.form.get('search') }}".
-</div>
-{%end if%}
 
 {% endblock %}
 

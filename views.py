@@ -179,7 +179,7 @@ def search():
             keys = ["gameID", "gameName", "gameReleaseDate", "gameAgeRating", "gameDeveloper", "gamePlatforms", "gameDescription", "gameUserRating", "gameActors","gamePoster","gameTrailer"]
             gameDataSearch = [dict(zip(keys, searchGames))for searchGames in searchData ]
 
-            return render_template('search.html', game=gameDataSearch)
+            return render_template('search.html', games=gameDataSearch)
         
         else:
             flash('No Game found.', 'danger')
