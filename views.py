@@ -73,8 +73,10 @@ def register():
                 (userID,email,password,personName) VALUES (?,?,?,?)",
                 (userID,email,pw_hash,name))
             users.commit()
-            return render_template("index.html")
+            return render_template("login.html")
     else:
+         # Display an error message
+         flash('Error. Please try again.', 'danger')
          return render_template("register.html")
   
 # Login directory to allow the user to login to the website       
@@ -110,10 +112,10 @@ def login():
 
 @views.route("/logout/")
 def logout():
-    if session['userName'] != None:
-        session.pop('userName', None)
+    if session['userName'] is None:
         return render_template('index.html')
     else:
+        session.pop('userName', None)
         return render_template('index.html')
     
 @views.route("/games/")
