@@ -19,11 +19,10 @@
     </div>
 </div>
 {% else %}
-<div class="alert alert-info" role="alert">
-    No games found for "{{ request.form.get('search') }}".
-</div>
+    <div class="alert alert-info mx-auto" role="alert">
+        No games found for "{{ request.form.get('search') }}".
+    </div>
 {% endif %}
-
 <div class="allGamesButton">
     <a href="/" class="btn btn-outline-info">Back to Home</a>
   </div>

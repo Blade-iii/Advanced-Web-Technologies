@@ -2,10 +2,10 @@
 {% block title %}Games Catalog{% endblock %}
 {% block content %}
 <div class="searchBar">
-    <form class="d-flex" role="search" method="POST">
-      <input class="form-control me-2" name="search" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-info" type="submit">Search</button>
-    </form>
+    <form class="d-flex" role="search" action="/search" method="POST">
+        <input class="form-control me-2" id="search" name="search" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-info" type="submit">Search</button>
+      </form>
   </div>
 <h2>All games</h2>
 <br>
