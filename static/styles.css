@@ -127,6 +127,10 @@ h5{
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
+.formStyle{
+    justify-content: center;
+    width: 40%;
+}
 
 
 .footer {
