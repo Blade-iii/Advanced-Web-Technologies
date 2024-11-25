@@ -10,7 +10,7 @@ h1{
     text-align: center;
     color: #d3d3d3;  
 }
-h2, h3{
+h2, h3,h4{
     text-align: center;
     color: #00bcd4;
 }
@@ -72,6 +72,9 @@ h5{
     text-align: left;
 }
 
+.aboutText{
+    text-align: center;
+}
 
 .game-card:hover {
     transform: scale(1.15);
