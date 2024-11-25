@@ -153,9 +153,10 @@ def allGames():
     if gameData:
         keys = ["gameID", "gameName", "gameReleaseDate", "gameAgeRating", "gameDeveloper", "gamePlatforms", "gameDescription", "gameUserRating", "gameActors","gamePoster","gameTrailer"]
         gameDataList = [dict(zip(keys, game)) for game in gameData]
-        print(gameDataList)
-
-
+        
+        # Stores the size of the array
+        session['gameSize'] = len(gameData)
+        
         # If game data is found redirect with game data
         return render_template('gameCatalog.html',games=gameDataList)
     else:  
