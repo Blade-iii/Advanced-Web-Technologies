@@ -1,6 +1,10 @@
 # Advanced Web Technologies
-
 This repository contains lab work and submissions for the **Advanced Web Technologies** course project.
+
+## Deployment:
+The deployment was done with [Railway](https://railway.app/) which takes the github repo and deploys it as a dynamic website.
+
+[Deployment Link ](https://advanced-web-technologies-production.up.railway.app/)
 
 ## Prerequisites
 
@@ -14,14 +18,15 @@ Before running the project, make sure you have the following installed on your c
 
 To clone this repository, run the following command in your terminal:
 
-```bash
+```
 git clone https://github.com/Blade-iii/Advanced-Web-Technologies.git
+```
 
 ## Docker Commands
 
 To build and run your Docker container for the Flask application, use the following commands:
 
-```bash
+```
 # Navigate to the project directory
 cd Advanced-Web-Technologies/Coursework
 
@@ -30,3 +35,4 @@ docker build -t dockerfile .
 
 # Run the Docker container
 docker run -p 5000:5000 dockerfile
+```
