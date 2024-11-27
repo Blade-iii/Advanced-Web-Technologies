@@ -140,25 +140,33 @@ def games():
     
 @views.route("/allGames/")
 def allGames():
-     # Load the JSON data from the file
-    with open("games.json", "r") as file:
-        data = json.load(file)
-        gamesList = data["Games"]
-    
     connect = sqlite3.connect('database.db') 
     cursor = connect.cursor()
     cursor.execute('SELECT * FROM GAMES ORDER BY gameName ASC')
     gameData = cursor.fetchall()
     
     if gameData:
+        ## Put the data from games into an list
         keys = ["gameID", "gameName", "gameReleaseDate", "gameAgeRating", "gameDeveloper", "gamePlatforms", "gameDescription", "gameUserRating", "gameActors","gamePoster","gameTrailer"]
         gameDataList = [dict(zip(keys, game)) for game in gameData]
         
+        # Page logic for loading more pages
+        page = int(request.args.get('page',1))
+        # Number of games to be displayed
+        gamesPerPage = 12
+        # Start index so if the page number is 3 then the starting index will be 24 2*12=24
+        startIndex = (page-1) * gamesPerPage
+        # Calculates endIndex
+        endIndex = startIndex + gamesPerPage
+        # Splice the list with start and end index to make sure only 12 games are displayed
+        games = gameDataList[startIndex:endIndex]
+        
+        totalPages = (len(gameDataList) + gamesPerPage -1) // gamesPerPage
         # Stores the size of the array
-        session['gameSize'] = len(gameData)
+        session['gameSize'] = len(gameDataList)
         
         # If game data is found redirect with game data
-        return render_template('gameCatalog.html',games=gameDataList)
+        return render_template('gameCatalog.html',games=games,currentPage=page,totalPages=totalPages)
     else:  
         # If no game id redirect to home
         return render_template('index.html')

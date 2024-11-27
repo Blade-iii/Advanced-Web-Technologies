@@ -26,13 +26,17 @@
 </div>
 
 {% if session.gameSize > 12 %}
-<div class="NextPageButton">
-    <button onclick="hide"type="button" class="btn btn-outline-info">Show More Games</button>
-      </div>
+   <div class="gamePages">
+    {% if currentPage > 1 %}
+    <a href="/allGames/?page={{ currentPage - 1 }}">Previous</a>
+    {% endif %}
+    {% if currentPage < totalPages %}
+    <a href="/allGames/?page={{ currentPage + 1 }}">Next</a>
     {% endif %}
 </div>
-
-
+</div>
+    {% endif %}
+</div>
 
 {% endblock %}
 
