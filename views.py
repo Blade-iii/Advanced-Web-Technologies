@@ -100,11 +100,13 @@ def login():
              # If the credentials are correct, redirect to the home page
                 return render_template('index.html',userName = session['userName'])
         
-        else:
+            else:
             # If incorrect, display an error message
+                flash('Incorrect email or password. Please try again.', 'danger')
+                return render_template('login.html')
+        else:
             flash('Incorrect email or password. Please try again.', 'danger')
             return render_template('login.html')
-    
    
     return render_template('login.html')
 
