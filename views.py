@@ -77,7 +77,7 @@ def register():
     else:
          # Display an error message
          flash('Error. Please try again.', 'danger')
-         return render_template("register.html")
+         return render_template("index.html")
   
 # Login directory to allow the user to login to the website       
 @views.route("/login/", methods=['GET', 'POST'])
