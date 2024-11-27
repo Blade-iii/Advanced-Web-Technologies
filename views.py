@@ -73,11 +73,11 @@ def register():
                 (userID,email,password,personName) VALUES (?,?,?,?)",
                 (userID,email,pw_hash,name))
             users.commit()
-            return render_template("login.html")
+            return render_template("index.html")
     else:
          # Display an error message
          flash('Error. Please try again.', 'danger')
-         return render_template("index.html")
+         return render_template("register.html")
   
 # Login directory to allow the user to login to the website       
 @views.route("/login/", methods=['GET', 'POST'])
