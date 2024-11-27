@@ -12,7 +12,6 @@
 
 <div class="container allGamesCard">
     <div class="row justify-content-center">
-        {% if gameSize > 12 %}
         {% for game in games %}
         <div class="col-md-4">
             <div class="game-card" style="width: 100%; min-height: 250px;">
@@ -21,26 +20,19 @@
                     <h5 class="card-title">{{ game.gameName }}</h5>
                 </div>
             </div>
+            <br>
         </div>
     {% endfor %}
-        {% else %}
-        {% for game in games %}
-            <div class="col-md-4 hide">
-                <div class="game-card" style="width: 100%; min-height: 250px;">
-                    <a href="/games/?id={{game.gameID}}"> <img src="{{ game.gamePoster }}" class="card-img-top" alt="{{ game.gameName }} poster" style="height: 250px; object-fit: cover;"></a>
-                    <div class="card-title">
-                        <h5 class="card-title">{{ game.gameName }}</h5>
-                    </div>
-                </div>
-            </div>
-        {% endfor %}
-        {% endif %}
-    </div>
 </div>
 
+{% if session.gameSize > 12 %}
 <div class="NextPageButton">
     <button onclick="hide"type="button" class="btn btn-outline-info">Show More Games</button>
       </div>
+    {% endif %}
+</div>
+
+
 
 {% endblock %}
 

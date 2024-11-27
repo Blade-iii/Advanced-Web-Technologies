@@ -155,7 +155,25 @@
     "gameActors": "Cody Christian, Briana White, Britt Baron",
     "gamePoster":"/static/ff7.jpg" ,
     "gameTrailer":"tUaWUyaeXhs?si=YZebOLp2or8sE-Dv"    
+},
+{
+    "gameID":13,
+    "gameName":"Monster Hunter Rise",
+    "gameReleaseDate": "2022-01-12",
+    "gameAgeRating":12,
+    "gameDeveloper":"Capcom",
+    "gamePlatforms":"PS5, PS4, Xbox One, Xbox Series X/S, Nintendo Switch, PC",
+    "gameDescription":"Monster Hunter Rise is an action RPG that transports players to the colorful Kamura Village, an all-new serene mountain locale that attracts visitors with its unique culture and innovative hunting technologies.",
+    "gameUserRating":9.1,
+    "gameActors": "Takaya Hashi, Rina Sato, Yuichiro Umehara",
+    "gamePoster":"/static/ff7.jpg" ,
+    "gameTrailer":"tUaWUyaeXhs?si=YZebOLp2or8sE-Dv"  
 }
+
+
+
+
+
 
     ]
 }
