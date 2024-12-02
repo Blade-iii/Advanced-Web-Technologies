@@ -24,7 +24,7 @@
         </div>
     {% endfor %}
 </div>
-
+<!-- Page logic to create next page if theres more than 12 games in the database  -->
 {% if session.gameSize > 12 %}
    <div class="gamePages">
     {% if currentPage > 1 %}
