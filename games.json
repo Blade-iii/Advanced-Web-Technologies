@@ -190,10 +190,23 @@
     "gameDeveloper":"id Software",
     "gamePlatforms":"PS5, PS4, Xbox One, Xbox Series X/S, Nintendo Switch, PC",
     "gameDescription":"On Mars, a massive research facility tapping energy from hell has been overwhelmed by demonic forces. As the last DOOM Slayer, you have been resurrected to do one thing: to cleanse this world and send them back to where they came from.",
-    "gameUserRating":8.9,
+    "gameUserRating":8.5,
     "gameActors": "Darin De Paul, Kevin Schon, Abby Craden",
     "gamePoster":"/static/doom.jpg" ,
     "gameTrailer":"RhjtJIHe_v0?si=8VH9Eye3XzeI7l4n"   
+},
+{
+    "gameID":16,
+    "gameName":"Tomb Raider",
+    "gameReleaseDate": "2013-03-05",
+    "gameAgeRating":18,
+    "gameDeveloper":"Crystal Dynamics",
+    "gamePlatforms":"PS3, PS4 Xbox 360, Xbox One, PC",
+    "gameDescription":"Armed with only the raw instincts and physical ability, experience Lara Croft's intense origin story from a young woman to a hardened survivor.",
+    "gameUserRating":8.7,
+    "gameActors": "Camilla Luddington, Robin Atkin Downes, Cooper Thornton",
+    "gamePoster":"/static/tomb.jpg" ,
+    "gameTrailer":"XsWojNNqFTg?si=1OHiT0-SJUPjAFwX"    
 }
 
 
