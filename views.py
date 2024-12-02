@@ -1,13 +1,13 @@
 from flask import Blueprint, render_template , redirect , url_for, request, flash,session # Import libraries from flask
 import sqlite3 # import SQLite 3 to create and access a database
 import json # Import Json Library
-from flask_bcrypt import Bcrypt
+from flask_bcrypt import Bcrypt # Encryption for the users password
 import datetime
 
 bcrypt = Bcrypt()
 views = Blueprint('views', __name__)  # Allows this Python file to be used as a blueprint
 
-# Connect to the database and create the user table
+# Connect to the database and create the user table and the game table
 connect = sqlite3.connect('database.db')  
 connect.execute(
     'CREATE TABLE IF NOT EXISTS USERS(userID INTEGER PRIMARY KEY AUTOINCREMENT,email TEXT NOT NULL UNIQUE, password TEXT NOT NULL UNIQUE, personName TEXT NOT NULL)'
@@ -27,7 +27,7 @@ data = []
 for row in rows:
     data.append({'id': row[0], 'email': row[1], 'password': row[2], 'name':row[3]})
 
-# Dump JSON data to a file
+# Dump JSON data to a file this is used to show that users can register
 with open('users.json', 'w') as f:
     json.dump(data, f, indent=4)
 
@@ -37,7 +37,8 @@ connect.close();
 with open("games.json", "r") as file:
     data = json.load(file)
     gamesList = data["Games"]
-        
+  
+# The games from the Json are then put into the games database      
 with sqlite3.connect('database.db') as conn:
     cursor = conn.cursor()
     cursor.executemany(
@@ -64,9 +65,10 @@ def register():
         name = request.form['name']
         userID = None
         
-    # Encrypt password
+        # Encrypt password with hashing
         pw_hash = bcrypt.generate_password_hash(password).decode('utf-8')
         
+        # Insert registered user details into the database
         with sqlite3.connect("database.db") as users:
             cursor = users.cursor()
             cursor.execute("INSERT INTO USERS \
@@ -110,6 +112,7 @@ def login():
    
     return render_template('login.html')
 
+# Logout directory which removes session data and redirects the user
 @views.route("/logout/")
 def logout():
     if session['userName'] is None:
@@ -117,18 +120,25 @@ def logout():
     else:
         session.pop('userName', None)
         return render_template('index.html')
-    
+   
+# Game directory this allows the user to click on a game and view its details 
 @views.route("/games/")
 def games():
-    id = request.args.get('id','')
+    # Get the id from the url
+    id = request.args.get('id','') 
+    
+    # Check if the id was passed in
     if id:
         connect = sqlite3.connect('database.db') 
         cursor = connect.cursor()
         cursor.execute('SELECT * FROM GAMES WHERE gameID=?',(id,))
         gameData = cursor.fetchone()
         
+    # If there are games pulled from the database then it continues to put the game         
     if gameData:
         keys = ["gameID", "gameName", "gameReleaseDate", "gameAgeRating", "gameDeveloper", "gamePlatforms", "gameDescription", "gameUserRating", "gameActors","gamePoster","gameTrailer"]
+       
+        # Assign the data from the database with the keys to be accessed
         gameDataDict = dict(zip(keys, gameData))
         
         # If game data is found redirect with game data
@@ -137,7 +147,7 @@ def games():
         # If no game id redirect to home
         return render_template('index.html')
 
-    
+# This directory shows all games that are in the database   
 @views.route("/allGames/")
 def allGames():
     connect = sqlite3.connect('database.db') 
@@ -145,6 +155,7 @@ def allGames():
     cursor.execute('SELECT * FROM GAMES ORDER BY gameName ASC')
     gameData = cursor.fetchall()
     
+    # If games are found it will display the games
     if gameData:
         ## Put the data from games into an list
         keys = ["gameID", "gameName", "gameReleaseDate", "gameAgeRating", "gameDeveloper", "gamePlatforms", "gameDescription", "gameUserRating", "gameActors","gamePoster","gameTrailer"]
@@ -158,36 +169,41 @@ def allGames():
         startIndex = (page-1) * gamesPerPage
         # Calculates endIndex
         endIndex = startIndex + gamesPerPage
-        # Splice the list with start and end index to make sure only 12 games are displayed
+        # Splice the list with start and end index to make sure only 12 games are displayed at once
         games = gameDataList[startIndex:endIndex]
-        
+        # Calculate total pages and make sure its a whole number
         totalPages = (len(gameDataList) + gamesPerPage -1) // gamesPerPage
-        # Stores the size of the array
+        # Stores the size of the array in a session
         session['gameSize'] = len(gameDataList)
         
-        # If game data is found redirect with game data
+        # If game data is found redirect with game data and page data
         return render_template('gameCatalog.html',games=games,currentPage=page,totalPages=totalPages)
     else:  
         # If no game id redirect to home
         return render_template('index.html')
     
-
+# Directory for copyright information for the website
 @views.route("/copyright/")
 def copyright():
     return render_template('copyright.html')
 
+# Directory for search it allows the user to search for games throughout the website
 @views.route("/search" , methods=['GET', 'POST'])
 def search():
     if request.method =='POST':
         search = request.form.get('search')
 
+        # If theres a value in search continue
         if search:
             connect = sqlite3.connect('database.db') 
             cursor = connect.cursor()
-            cursor.execute('SELECT * FROM GAMES WHERE gameName LIKE ?', ('%' + search + '%',))
+            # Check if theres game in the database with the name the user inputted
+            cursor.execute('SELECT * FROM GAMES WHERE gameName LIKE ?', ('%' + search + '%',)) 
             searchData = cursor.fetchall()
 
+            # Assign keys 
             keys = ["gameID", "gameName", "gameReleaseDate", "gameAgeRating", "gameDeveloper", "gamePlatforms", "gameDescription", "gameUserRating", "gameActors","gamePoster","gameTrailer"]
+            # Assign keys and values to gameDataSearch
             gameDataSearch = [dict(zip(keys, searchGames))for searchGames in searchData ]
 
             return render_template('search.html', games=gameDataSearch)
