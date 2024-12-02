@@ -168,6 +168,32 @@
     "gameActors": "Takaya Hashi, Rina Sato, Yuichiro Umehara",
     "gamePoster":"/static/mhr.jpg" ,
     "gameTrailer":"TdCec2GRg-w?si=3glelg_8r9fjGUZq"  
+},
+{
+    "gameID":14,
+    "gameName":"Sekiro: Shadows Die Twice",
+    "gameReleaseDate": "2019-03-22",
+    "gameAgeRating":18,
+    "gameDeveloper":"FromSoftware",
+    "gamePlatforms":"PS5, PS4, Xbox One, Xbox Series X/S, PC",
+    "gameDescription":"Set after the rise of the Ashina Empire in 1500's Sengouku Era Japan. Sekiro follows the story of Wolf, a Shinobi tasked with protecting Kuro, a young lord of mysterious lineage from whom he was separated after being left for dead, as the land of the Ashina begins to fall to its enemies.",
+    "gameUserRating":8.9,
+    "gameActors": "Daisuke Namikawa, Miyuki Sato, Jin Urayama",
+    "gamePoster":"/static/sekiro.jpg" ,
+    "gameTrailer":"4OgoTZXPACo?si=jnJPlN7OfOoxGKc1"    
+},
+{
+    "gameID":15,
+    "gameName":"Doom",
+    "gameReleaseDate": "2016-05-22",
+    "gameAgeRating":18,
+    "gameDeveloper":"id Software",
+    "gamePlatforms":"PS5, PS4, Xbox One, Xbox Series X/S, Nintendo Switch, PC",
+    "gameDescription":"On Mars, a massive research facility tapping energy from hell has been overwhelmed by demonic forces. As the last DOOM Slayer, you have been resurrected to do one thing: to cleanse this world and send them back to where they came from.",
+    "gameUserRating":8.9,
+    "gameActors": "Darin De Paul, Kevin Schon, Abby Craden",
+    "gamePoster":"/static/doom.jpg" ,
+    "gameTrailer":"RhjtJIHe_v0?si=8VH9Eye3XzeI7l4n"   
 }
 
 
