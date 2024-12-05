@@ -248,7 +248,7 @@
     "gameTrailer":"A9JV0EvCkMI?si=EJNvX5sGoOluHA7l"  
 },
 {
-   "gameID":20,
+    "gameID":20,
     "gameName":"Ghost of Tsushima",
     "gameReleaseDate": "2020-07-17",
     "gameAgeRating":18,
@@ -259,7 +259,46 @@
     "gameActors": "Daisuke Tsuji, Eric Steinberg, Sumalee Montano",
     "gamePoster":"/static/ghost.jpg" ,
     "gameTrailer":"RcWk08PBe7k?si=fUnDFyRlJRSg6CE2"   
-}
+},
+{
+    "gameID":21,
+    "gameName":"Ghostrunner",
+    "gameReleaseDate": "2020-07-25",
+    "gameAgeRating":18,
+    "gameDeveloper":"OneMoreLevel",
+    "gamePlatforms":"PS5, PS4, PC",
+    "gameDescription":"Ghostrunner offers a unique single-player experience: fast-paced, violent combat, and an original setting that blends science fiction with post-apocalyptic themes. It tells the story of a world that has already ended and its inhabitants who fight to survive.",
+    "gameUserRating":9.1,
+    "gameActors": "Carl G. Brooks, Mark Dodson, Lindsey Vega",
+    "gamePoster":"/static/ghostrunner.jpg" ,
+    "gameTrailer":"SS6YC7L3L-k?si=DpvP1PDGPmmYqHO"   
+ },
+ {
+   "gameID":22,
+    "gameName":"Middle-Earth: Shadow of Mordor",
+    "gameReleaseDate": "2014-09-30",
+    "gameAgeRating":18,
+    "gameDeveloper":"Monolith Productions",
+    "gamePlatforms":"PS3, PS4 Xbox 360, Xbox One, PC",
+    "gameDescription":"The family of Talion, a ranger of Gondor responsible for guarding the Black Gate of Mordor, is killed by Saurons armies, but Talion is revived with wraith-like abilities and heads into Mordor to exact his revenge.",
+    "gameUserRating":8.2,
+    "gameActors": "Jason Spisak, Claudia Black, Jack Quaid",
+    "gamePoster":"/static/middleEarth.jpg" ,
+    "gameTrailer":"4rbOTQhasnM?si=zo9j4qCzrKg2Krxk"   
+ },
+ {
+    "gameID":23,
+    "gameName":"Batman Arkham City",
+    "gameReleaseDate": "2011-10-18",
+    "gameAgeRating":15,
+    "gameDeveloper":"Rocksteady Studios",
+    "gamePlatforms":"PS3, PS4 Xbox 360, Xbox One, PC",
+    "gameDescription":"When part of Gotham is turned into a private reserve for criminals known as Arkham City, all hell is sure to break loose, and the Dark Knight is the only one who can stop it.",
+    "gameUserRating":9.4,
+    "gameActors": "Kevin Conroy, Mark Hamill, David Kaye",
+    "gamePoster":"/static/batmanCity.jpg" ,
+    "gameTrailer":"muCtJsy-d9w?si=Fqt7SFjx-ZUaUzL1" 
+ }
 
 
 
