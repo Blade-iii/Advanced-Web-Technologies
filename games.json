@@ -201,12 +201,64 @@
     "gameReleaseDate": "2013-03-05",
     "gameAgeRating":18,
     "gameDeveloper":"Crystal Dynamics",
-    "gamePlatforms":"PS3, PS4 Xbox 360, Xbox One, PC",
+    "gamePlatforms":"PS3, PS4, Xbox 360, Xbox One, PC",
     "gameDescription":"Armed with only the raw instincts and physical ability, experience Lara Croft's intense origin story from a young woman to a hardened survivor.",
     "gameUserRating":8.7,
     "gameActors": "Camilla Luddington, Robin Atkin Downes, Cooper Thornton",
     "gamePoster":"/static/tomb.jpg" ,
     "gameTrailer":"XsWojNNqFTg?si=1OHiT0-SJUPjAFwX"    
+},
+{
+    "gameID":17,
+    "gameName":"Resident Evil Village",
+    "gameReleaseDate": "2021-05-07",
+    "gameAgeRating":18,
+    "gameDeveloper":"Capcom",
+    "gamePlatforms":"PS5, PS4, Xbox One, Xbox Series X/S, Nintendo Switch, PC",
+    "gameDescription":"Ethan Winters' world suddenly comes crashing down when Chris Redfield's appearance sets off a chain of events that ultimately leads him to a mysterious village.",
+    "gameUserRating":8.6,
+    "gameActors": "Todd Soley, Katie O Hagan, Jeff Schine",
+    "gamePoster":"/static/re8.jpg" ,
+    "gameTrailer":"tjfTxFzGh3Q?si=025038sM9KZqxxHFW"     
+},
+{
+    "gameID":18,
+    "gameName":"Halo Reach",
+    "gameReleaseDate": "2010-09-14",
+    "gameAgeRating":12,
+    "gameDeveloper":"Bungie",
+    "gamePlatforms":"Xbox 360, Xbox One, PC",
+    "gameDescription":"A highly-trained branch of the UNSC known as the Noble Team must defend the planet of Reach from a massive Covenant invasion.",
+    "gameUserRating":8.6,
+    "gameActors": "Freddy Bosche, Alona Tal, Jamie Hector",
+    "gamePoster":"/static/haloReach.jpg" ,
+    "gameTrailer":"s3MabEog3yQ?si=Ey0-C0XaJlYWTu3O"  
+},
+{
+    "gameID":19,
+    "gameName":"Metal Gear Solid V",
+    "gameReleaseDate": "2015-09-01",
+    "gameAgeRating":18,
+    "gameDeveloper":"Konami",
+    "gamePlatforms":"PS3, PS4 Xbox 360, Xbox One, PC",
+    "gameDescription":"After awakening from a nine year coma, Big Boss forms a new mercenary group called, Diamond Dogs, and teams up with his former rival, Ocelot, to track down the men responsible for the destruction of MSF.",
+    "gameUserRating":8.7,
+    "gameActors": "Kiefer Sutherland, Robin Atkin Downes, Troy Baker",
+    "gamePoster":"/static/mgv.jpg" ,
+    "gameTrailer":"A9JV0EvCkMI?si=EJNvX5sGoOluHA7l"  
+},
+{
+   "gameID":20,
+    "gameName":"Ghost of Tsushima",
+    "gameReleaseDate": "2020-07-17",
+    "gameAgeRating":18,
+    "gameDeveloper":"Sucker Punch",
+    "gamePlatforms":"PS5, PS4, PC",
+    "gameDescription":"Set in 1274 on the Tsushima Island, the last samurai, Jin Sakai, must master a new fighting style, the way of the Ghost, to defeat the Mongol forces and fight for the freedom and independence of Japan.",
+    "gameUserRating":9.2,
+    "gameActors": "Daisuke Tsuji, Eric Steinberg, Sumalee Montano",
+    "gamePoster":"/static/ghost.jpg" ,
+    "gameTrailer":"RcWk08PBe7k?si=fUnDFyRlJRSg6CE2"   
 }
 
 
