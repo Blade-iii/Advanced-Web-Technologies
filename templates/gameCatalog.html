@@ -28,10 +28,14 @@
 {% if session.gameSize > 12 %}
    <div class="gamePages">
     {% if currentPage > 1 %}
-    <a href="/allGames/?page={{ currentPage - 1 }}">Previous</a>
+    <a href="/allGames/?page={{ currentPage - 1 }}">
+        <button class="btn btn-outline-info">Back</button>
+    </a>
     {% endif %}
     {% if currentPage < totalPages %}
-    <a href="/allGames/?page={{ currentPage + 1 }}">Next</a>
+    <a href="/allGames/?page={{ currentPage + 1 }}">
+        <button class="btn btn-outline-info">Next</button>
+    </a>
     {% endif %}
 </div>
 </div>
