@@ -1,15 +1,18 @@
 
 body{
     background-color: #121212;
+    color: #d3d3d3;
 }
 
 p{
     color: #d3d3d3
 }
+
 h1{
     text-align: center;
     color: #d3d3d3;  
 }
+
 h2, h3,h4{
     text-align: center;
     color: #00bcd4;
@@ -20,6 +23,7 @@ h5{
     padding-top: 5px;
     text-align: center;
 }
+
 .card-title{
     color: #00bcd4;
 }
@@ -28,12 +32,82 @@ h5{
     background-color: #0e0c0c;
 }
 
+.card-text{
+    color: #00bcd4;
+}
+
+.single-card {
+    margin: auto;
+    width: 1000px;
+    display: flex !important;
+    justify-content: center !important;
+    padding-bottom: 4rem;
+    border:2px solid #d3d3d3;
+    transition: border-color 0.3s ease;
+    background-color: #0e0c0c;
+} 
+
+.single-card:hover{
+    border:2px solid #00bcd4;
+}
+
+
 .form-text{
     color:#d3d3d3;
 }
 
 .form-label{
     color:#00bcd4;
+}
+
+/* White mode styles */
+body.whiteMode{
+    background-color: white;
+    color: black;
+}
+
+body.whiteMode .form-label{
+    color: black;
+}
+
+body.whiteMode .form-text{
+    color: black;
+}
+
+body.whiteMode h1{
+    color: black;
+}
+
+body.whiteMode h2{
+    color: black;
+}
+
+body.whiteMode h3{
+    color: black;
+}
+
+body.whiteMode h5{
+    color: black;
+}
+
+body.whiteMode p{
+    color: black;
+}
+
+body.whiteMode .card-body{
+    background-color: white;
+}
+
+body.whiteMode .card-title{
+    color: white;
+}
+
+body.whiteMode .card-text{
+    color: black;
+}
+
+body.whiteMode .single-card{
+    background-color: white;
 }
 
 
@@ -79,21 +153,7 @@ h5{
 .game-card:hover {
     transform: scale(1.15);
 }
-.single-card {
-    margin: auto;
-    width: 1000px;
-    display: flex !important;
-    justify-content: center !important;
-    padding-bottom: 4rem;
-    border:2px solid #d3d3d3;
-    transition: border-color 0.3s ease;
-    background-color: #0e0c0c;
-} 
 
-.single-card:hover{
-    border:2px solid #00bcd4;
-
-}
 
 .gamePoster{
     display: flex;
@@ -107,9 +167,6 @@ h5{
     justify-content: center;
 }
 
-.card-text{
-    color: #00bcd4;
-}
 
 .carousel-inner:hover{
     transform: scale(1.05);
@@ -124,12 +181,14 @@ h5{
 .allGamesCard{
     margin-bottom: 140px;
 }
+
 .searchBar{
     display: flex;
     justify-content: center;
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
+
 .formStyle{
     justify-content: center;
     width: 40%;
@@ -144,10 +203,10 @@ h5{
     background-color: #0e0c0c;
     color: #00bcd4;
 }
+
 .hide{
     display: none;
 }
-
 
 
 .footer {
