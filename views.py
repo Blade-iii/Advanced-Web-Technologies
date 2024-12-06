@@ -187,6 +187,16 @@ def allGames():
 def copyright():
     return render_template('copyright.html')
 
+# Directory for privacy information for the website
+@views.route("/privacy/")
+def privacy():
+    return render_template('privacy.html')
+
+# Directory for terms information for the website
+@views.route("/terms/")
+def terms():
+    return render_template('terms.html')
+
 # Directory for search it allows the user to search for games throughout the website
 @views.route("/search" , methods=['GET', 'POST'])
 def search():
