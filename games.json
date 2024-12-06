@@ -298,6 +298,19 @@
     "gameActors": "Kevin Conroy, Mark Hamill, David Kaye",
     "gamePoster":"/static/batmanCity.jpg" ,
     "gameTrailer":"muCtJsy-d9w?si=Fqt7SFjx-ZUaUzL1" 
+ },
+ {
+   "gameID":24,
+    "gameName":"Age of Empires II: Definitive Edition",
+    "gameReleaseDate": "2019-11-14",
+    "gameAgeRating":12,
+    "gameDeveloper":"Worlds Edge ",
+    "gamePlatforms":"Xbox One, Xbox Series X/S, PC",
+    "gameDescription":"Age of Empires II: DE celebrates the 20th year of one of the most popular strategy games ever with 4K Ultra HD graphics, a new and fully remastered soundtrack, and brand-new content The Last Khans with 3 campaigns and 4 civilizations.",
+    "gameUserRating":9.4,
+    "gameActors": "Joseph Capp, Jason Damron, Sam Dhoss",
+    "gamePoster":"/static/ageof.jpg" ,
+    "gameTrailer":"ZOgBVR21pWg?si=JxAge2Kc3t3cjPAI"  
  }
 
 
