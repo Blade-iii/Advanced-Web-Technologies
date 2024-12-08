@@ -85,7 +85,7 @@ def register():
                 (userID,email,password,personName) VALUES (?,?,?,?)",
                 (userID,email,pw_hash,name))
             users.commit()
-            return render_template("index.html")
+            return redirect(url_for("views.home"))
     else:
          # Display an error message
          flash('Error. Please try again.', 'danger')
@@ -112,15 +112,15 @@ def login():
             
             if bcrypt.check_password_hash(storedPw, password):
              # If the credentials are correct, redirect to the home page
-                return render_template('index.html',userName = session['userName'])
+                return redirect(url_for("views.home"))
         
             else:
             # If incorrect, display an error message
                 flash('Incorrect email or password. Please try again.', 'danger')
-                return render_template('login.html')
+                return redirect(url_for("views.login"))
         else:
             flash('Incorrect email or password. Please try again.', 'danger')
-            return render_template('login.html')
+            return redirect(url_for("views.login"))
    
     return render_template('login.html')
 
@@ -128,10 +128,10 @@ def login():
 @views.route("/logout/")
 def logout():
     if session['userName'] is None:
-        return render_template('index.html')
+        return redirect(url_for("views.home"))
     else:
         session.pop('userName', None)
-        return render_template('index.html')
+        return redirect(url_for("views.home"))
     
 @views.route("/settings")
 def settings():
@@ -139,10 +139,10 @@ def settings():
         userID = session['userID']
         connect = sqlite3.connect('database.db')
         cursor = connect.cursor()
-        cursor.execute('SELECT * FROM USERS WHERE userID=?',((userID)))
+        cursor.execute('SELECT * FROM USERS WHERE userID=?', (userID,))
         userData = cursor.fetchone()
     else:
-        redirect(url_for("/"))
+        redirect(url_for("views.home"))
         
     if userData:
         keys=["userID","email","password","name"]
@@ -150,7 +150,7 @@ def settings():
     
         return render_template("settings.html",user=userList)
     else:
-        redirect(url_for("/"))
+        redirect(url_for("views.home"))
     
    
 # Game directory this allows the user to click on a game and view its details 
@@ -252,6 +252,6 @@ def search():
         
         else:
             flash('No Game found.', 'danger')
-            return redirect(url_for('/'))
+            return redirect(url_for('views.home'))
     else:
-        return redirect(url_for('/'))
+        return redirect(url_for('views.home'))

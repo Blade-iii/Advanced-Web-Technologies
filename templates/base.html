@@ -34,7 +34,7 @@
                   Account
                 </a>
                 <ul class="dropdown-menu">
-                  {% if userName %}
+                  {% if session.userName %}
                   <li><a class="dropdown-item disabled" aria-disabled="true" href="/login">Login</a></li>
                   <li><a class="dropdown-item" href="/logout">Log out</a></li>
                   {% else %}
@@ -58,8 +58,8 @@
     <br>
 
     <!-- Fix later-->
-  {% if userName %}
-    <h1>Welcome {{ userName }}, to Games Catalog</h1>
+  {% if session.userName %}
+    <h1>Welcome {{ session.userName }}, to Games Catalog</h1>
   {% else %}
     <h1>Games Catalog</h1>
   {% endif %}
