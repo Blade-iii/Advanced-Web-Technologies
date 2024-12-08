@@ -222,6 +222,11 @@ body.whiteMode .aboutText{
     display: none;
 }
 
+.carousel-inner img {
+    height: 400px; 
+    object-fit: cover; 
+    width: 300px; 
+}
 
 .footer {
     display: flex;
