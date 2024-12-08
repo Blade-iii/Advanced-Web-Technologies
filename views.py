@@ -103,11 +103,13 @@ def login():
             cursor = conn.cursor()
             cursor.execute('SELECT * FROM USERS WHERE email = ?', (email,))
             result = cursor.fetchone()  # Fetch the user record
-           
+            
         
         if result:
             storedPw = result[2]
             session['userName'] = result[3] # Store user name in a session
+            session['userID'] = result[0]
+            
             if bcrypt.check_password_hash(storedPw, password):
              # If the credentials are correct, redirect to the home page
                 return render_template('index.html',userName = session['userName'])
@@ -130,6 +132,26 @@ def logout():
     else:
         session.pop('userName', None)
         return render_template('index.html')
+    
+@views.route("/settings")
+def settings():
+    if session['userID']:
+        userID = session['userID']
+        connect = sqlite3.connect('database.db')
+        cursor = connect.cursor()
+        cursor.execute('SELECT * FROM USERS WHERE userID=?',((userID)))
+        userData = cursor.fetchone()
+    else:
+        redirect(url_for("/"))
+        
+    if userData:
+        keys=["userID","email","password","name"]
+        userList = dict(zip(keys,userData))
+    
+        return render_template("settings.html",user=userList)
+    else:
+        redirect(url_for("/"))
+    
    
 # Game directory this allows the user to click on a game and view its details 
 @views.route("/games/")
