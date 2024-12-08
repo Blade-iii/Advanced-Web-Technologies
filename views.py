@@ -49,7 +49,17 @@ with sqlite3.connect('database.db') as conn:
 # Root directory for the website
 @views.route("/")
 def home():
-    return render_template("index.html") 
+    with sqlite3.connect('database.db') as conn:
+        cursor = conn.cursor()
+        cursor.execute('SELECT * FROM GAMES ORDER BY gameReleaseDate DESC LIMIT 3')
+        gameData = cursor.fetchall()
+    
+    if gameData:
+         ## Put the data from games into an list
+        keys = ["gameID", "gameName", "gameReleaseDate", "gameAgeRating", "gameDeveloper", "gamePlatforms", "gameDescription", "gameUserRating", "gameActors","gamePoster","gameTrailer"]
+        gameDataList = [dict(zip(keys, games)) for games in gameData]
+        
+    return render_template("index.html",games=gameDataList) 
 
 # About directory for the website to explain what it's about
 @views.route("/about")
