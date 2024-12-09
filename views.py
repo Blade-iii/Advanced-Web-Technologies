@@ -255,3 +255,14 @@ def search():
             return redirect(url_for('views.home'))
     else:
         return redirect(url_for('views.home'))
+    
+@views.route("/remove")
+def remove():
+    if session['userID']:
+        userID = session['userID']
+        connect = sqlite3.connect('database.db')
+        cursor = connect.cursor()
+        cursor.execute("DELETE FROM USERS WHERE userID=?",((userID,)))
+        connect.commit()
+    return redirect(url_for("views.logout"))
+    

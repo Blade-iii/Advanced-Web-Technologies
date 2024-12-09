@@ -228,6 +228,13 @@ body.whiteMode .aboutText{
     width: 300px; 
 }
 
+.accountButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
 .footer {
     display: flex;
     position: end;
