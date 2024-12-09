@@ -145,6 +145,7 @@ def settings():
         redirect(url_for("views.home"))
         
     if userData:
+        'CREATE TABLE IF NOT EXISTS USERS(userID INTEGER PRIMARY KEY AUTOINCREMENT,email TEXT NOT NULL UNIQUE, password TEXT NOT NULL UNIQUE, personName TEXT NOT NULL)'
         keys=["userID","email","password","name"]
         userList = dict(zip(keys,userData))
     
@@ -270,7 +271,9 @@ def remove():
 
 @views.route("/update" , methods=['GET', 'POST'])
 def update():
-    
+    if 'userID' not in session:
+        return redirect(url_for("views.home"))
+        
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
@@ -279,16 +282,17 @@ def update():
           # Encrypt password with hashing
         pw_hash = bcrypt.generate_password_hash(password).decode('utf-8')
         
-        if session['userID']:
-            userID = session["userID"]
-            connect = sqlite3.connect('database.db')
-            cursor = connect.cursor()
-            
-            cursor.execute("UPDATE USERS SET email=?, password=?, personName=? WHERE userID=?",((email,pw_hash,name,userID,)))
-            connect.commit()
-            connect.close()
-        else:
-            return redirect(url_for("views.home"))
+        userID = session["userID"]
+        connect = sqlite3.connect('database.db')
+        cursor = connect.cursor()
+                
+        cursor.execute("UPDATE USERS SET email=?, password=?, personName=? WHERE userID=?",((email,pw_hash,name,userID,)))
+        connect.commit()
+        connect.close()
+        
+        session.pop('userName',None)
+        session['userName'] = name
+       
     
     return render_template("update.html")
 
