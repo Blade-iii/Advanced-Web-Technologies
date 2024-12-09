@@ -262,7 +262,33 @@ def remove():
         userID = session['userID']
         connect = sqlite3.connect('database.db')
         cursor = connect.cursor()
+        
         cursor.execute("DELETE FROM USERS WHERE userID=?",((userID,)))
         connect.commit()
+        connect.close()
     return redirect(url_for("views.logout"))
+
+@views.route("/update" , methods=['GET', 'POST'])
+def update():
     
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+        name = request.form['name']
+        
+          # Encrypt password with hashing
+        pw_hash = bcrypt.generate_password_hash(password).decode('utf-8')
+        
+        if session['userID']:
+            userID = session["userID"]
+            connect = sqlite3.connect('database.db')
+            cursor = connect.cursor()
+            
+            cursor.execute("UPDATE USERS SET email=?, password=?, personName=? WHERE userID=?",((email,pw_hash,name,userID,)))
+            connect.commit()
+            connect.close()
+        else:
+            return redirect(url_for("views.home"))
+    
+    return render_template("update.html")
+
