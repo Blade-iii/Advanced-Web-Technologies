@@ -1,4 +1,4 @@
-
+/*  Default colour scheme */
 body{
     background-color: #121212;
     color: #d3d3d3;
@@ -36,6 +36,7 @@ h5{
     color: #00bcd4;
 }
 
+/*  Style used for the game page */
 .single-card {
     margin: auto;
     width: 1000px;
@@ -47,6 +48,7 @@ h5{
     background-color: #0e0c0c;
 } 
 
+/* On hover it changes the border */
 .single-card:hover{
     border:2px solid #00bcd4;
 }
@@ -118,7 +120,7 @@ body.whiteMode .aboutText{
     color: black;
 }
 
-
+/* Navigation styling so its visible with dark background */
 .navbar-brand, .nav-link, .dropdown-item {
     color: white !important; 
   }
@@ -157,12 +159,12 @@ body.whiteMode .aboutText{
 .aboutText{
     text-align: center;
 }
-
+/* On hover increase size of the image */
 .game-card:hover {
     transform: scale(1.15);
 }
 
-
+/* Center elements */
 .gamePoster{
     display: flex;
     justify-content: center;
@@ -181,7 +183,7 @@ body.whiteMode .aboutText{
     justify-content: center;
 }
 
-
+/* Hover for the carousel of images */
 .carousel-inner:hover{
     transform: scale(1.05);
 }
@@ -196,6 +198,7 @@ body.whiteMode .aboutText{
     margin-bottom: 140px;
 }
 
+/* Centering elements */
 .searchBar{
     display: flex;
     justify-content: center;
@@ -235,6 +238,7 @@ body.whiteMode .aboutText{
     margin: 20px;
 }
 
+/*  This is styling for the footer elements */
 .footer {
     display: flex;
     position: end;

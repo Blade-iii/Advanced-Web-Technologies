@@ -22,7 +22,7 @@ cursor = connect.cursor()
 cursor.execute('SELECT * FROM users')
 rows = cursor.fetchall()
 
-# Convert data to JSON
+# Convert data to JSON users
 data = []
 for row in rows:
     data.append({'id': row[0], 'email': row[1], 'password': row[2], 'name':row[3]})
@@ -33,7 +33,7 @@ with open('users.json', 'w') as f:
 
 connect.close();
 
-   # Load the JSON data from the file
+# Load the JSON data from the file
 with open("games.json", "r") as file:
     data = json.load(file)
     gamesList = data["Games"]
@@ -55,7 +55,7 @@ def home():
         gameData = cursor.fetchall()
     
     if gameData:
-         ## Put the data from games into an list
+        # Put the data from games into an list
         keys = ["gameID", "gameName", "gameReleaseDate", "gameAgeRating", "gameDeveloper", "gamePlatforms", "gameDescription", "gameUserRating", "gameActors","gamePoster","gameTrailer"]
         gameDataList = [dict(zip(keys, games)) for games in gameData]
         
@@ -132,7 +132,8 @@ def logout():
     else:
         session.pop('userName', None)
         return redirect(url_for("views.home"))
-    
+
+# Directory to allow the user to view their details and perform actions    
 @views.route("/settings")
 def settings():
     if session['userID']:
@@ -143,9 +144,9 @@ def settings():
         userData = cursor.fetchone()
     else:
         redirect(url_for("views.home"))
-        
+       
+    # Check if there is a user 
     if userData:
-        'CREATE TABLE IF NOT EXISTS USERS(userID INTEGER PRIMARY KEY AUTOINCREMENT,email TEXT NOT NULL UNIQUE, password TEXT NOT NULL UNIQUE, personName TEXT NOT NULL)'
         keys=["userID","email","password","name"]
         userList = dict(zip(keys,userData))
     
@@ -256,9 +257,11 @@ def search():
             return redirect(url_for('views.home'))
     else:
         return redirect(url_for('views.home'))
-    
+ 
+# Directory that takes the userID and removes it from the database   
 @views.route("/remove")
 def remove():
+    # Check if the user is logged in
     if session['userID']:
         userID = session['userID']
         connect = sqlite3.connect('database.db')
@@ -269,8 +272,10 @@ def remove():
         connect.close()
     return redirect(url_for("views.logout"))
 
+# Directory that allows the user to update their information
 @views.route("/update" , methods=['GET', 'POST'])
 def update():
+    # Check if the user is logged in
     if 'userID' not in session:
         return redirect(url_for("views.home"))
         
@@ -279,7 +284,7 @@ def update():
         password = request.form['password']
         name = request.form['name']
         
-          # Encrypt password with hashing
+        # Encrypt password with hashing
         pw_hash = bcrypt.generate_password_hash(password).decode('utf-8')
         
         userID = session["userID"]
@@ -290,6 +295,7 @@ def update():
         connect.commit()
         connect.close()
         
+        # Remove old session and replace with updated name
         session.pop('userName',None)
         session['userName'] = name
        
