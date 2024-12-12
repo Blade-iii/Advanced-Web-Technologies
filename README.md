@@ -6,6 +6,7 @@ The deployment was done with [Railway](https://railway.app/) which takes the git
 
 [Deployment Link ](https://advanced-web-technologies-production.up.railway.app/)
 
+
 ## Prerequisites
 
 Before running the project, make sure you have the following installed on your computer:
